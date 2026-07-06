@@ -1,0 +1,9 @@
+node_modules/
+.npm-cache/
+dist/
+.vite/
+.DS_Store
+*.zip
+**/output/
+**/references/
+**/design-qa.md
