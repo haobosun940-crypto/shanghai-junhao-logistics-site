@@ -61,13 +61,31 @@ const content = {
     subhead:
       "专注国际海运、空运、仓储、报关、商检、陆运、保险与多式联运。依托稳定承运资源、海外代理和清关网络，为客户提供安全、高效、精准的一体化物流方案。",
     heroPoints: ["承运资源", "海外代理", "全程节点", "多式联运"],
-    trackingTitle: "货物状态咨询",
-    trackingBadge: "业务人员协助查询",
+    trackingTitle: "货物实时追踪",
+    trackingBadge: "动态节点同步",
     trackingHint: "输入提单号 / 箱号 / 订单号",
-    trackingButton: "提交咨询",
-    trackingMore: "联系业务获取节点",
-    trackingResult:
-      "已收到查询信息。正式货物状态将由业务人员结合订舱、提货、装箱、报关、出运、目的港和签收节点协助确认。",
+    trackingButton: "查询",
+    trackingMore: "填入示例单号",
+    trackingDataReady: "运单数据已连接",
+    trackingDataLoading: "正在同步运单数据",
+    trackingDataError: "运单数据暂时无法加载",
+    trackingEmpty: "请输入提单号、箱号或订单号。",
+    trackingNotFound: "未找到该单号，请核对后重试，或联系业务人员补充最新节点。",
+    trackingExamplesLabel: "可试单号",
+    trackingMapTitle: "实时流转地图",
+    trackingCurrent: "当前状态",
+    trackingEta: "预计到达",
+    trackingRoute: "运输路线",
+    trackingLastUpdate: "最近更新",
+    trackingMilestones: "节点记录",
+    trackingProgress: "完成进度",
+    trackingPendingTitle: "输入单号后显示货物流转",
+    trackingPendingText: "查询成功后会显示当前节点、预计到达时间、路线位置和完整节点记录。",
+    trackingStates: {
+      done: "已完成",
+      active: "进行中",
+      pending: "待执行",
+    },
     stats: [
       ["多年", "行业经验", "深耕货运代理"],
       ["全球", "代理网络", "覆盖重点区域"],
@@ -316,13 +334,31 @@ const content = {
     subhead:
       "We provide international sea freight, air freight, warehousing, customs clearance, inspection, inland transport, insurance and multimodal logistics. Stable carrier resources, overseas agents and clearance networks help customers move cargo with safer, faster and more precise execution.",
     heroPoints: ["Carrier resources", "Overseas agents", "Milestone updates", "Multimodal transport"],
-    trackingTitle: "Cargo Status Support",
-    trackingBadge: "Operations-assisted inquiry",
+    trackingTitle: "Live Cargo Tracking",
+    trackingBadge: "Milestone sync",
     trackingHint: "Enter B/L, container or order number",
-    trackingButton: "Submit Inquiry",
-    trackingMore: "Contact operations for milestones",
-    trackingResult:
-      "Inquiry received. The operations team will help confirm cargo milestones across booking, pickup, loading, customs, departure, destination handling and final delivery.",
+    trackingButton: "Track",
+    trackingMore: "Use sample number",
+    trackingDataReady: "Tracking data connected",
+    trackingDataLoading: "Syncing tracking data",
+    trackingDataError: "Tracking data unavailable",
+    trackingEmpty: "Enter a B/L, container or order number.",
+    trackingNotFound: "No shipment found for this number. Please check it or contact operations for the latest milestone.",
+    trackingExamplesLabel: "Try",
+    trackingMapTitle: "Live Flow Map",
+    trackingCurrent: "Current Status",
+    trackingEta: "ETA",
+    trackingRoute: "Route",
+    trackingLastUpdate: "Last Update",
+    trackingMilestones: "Milestones",
+    trackingProgress: "Progress",
+    trackingPendingTitle: "Enter a number to show cargo movement",
+    trackingPendingText: "After a successful lookup, this panel shows the current milestone, ETA, route position and full tracking record.",
+    trackingStates: {
+      done: "Done",
+      active: "Active",
+      pending: "Pending",
+    },
     stats: [
       ["Years", "Industry Experience", "Freight forwarding focus"],
       ["Global", "Agency Network", "Key regional coverage"],
@@ -558,6 +594,50 @@ const content = {
   },
 };
 
+const trackingDataUrl = `${import.meta.env.BASE_URL}tracking-records.json`;
+
+const normalizeTrackingId = (value) => value.trim().replace(/\s+/g, "").toUpperCase();
+
+const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
+
+const getLocalized = (item, field, lang) => {
+  const suffix = lang === "zh" ? "Zh" : "En";
+  return item?.[`${field}${suffix}`] || item?.[field] || "";
+};
+
+const findShipment = (shipments, query) => {
+  const normalizedQuery = normalizeTrackingId(query);
+
+  return shipments.find((shipment) => {
+    const keys = [shipment.id, shipment.container, ...(shipment.aliases || [])].map((key) =>
+      normalizeTrackingId(String(key || "")),
+    );
+    return keys.includes(normalizedQuery);
+  });
+};
+
+const getRoutePosition = (route = [], progress = 0) => {
+  if (!route.length) {
+    return { x: 50, y: 50 };
+  }
+
+  if (route.length === 1) {
+    return route[0];
+  }
+
+  const safeProgress = clamp(progress);
+  const scaled = safeProgress * (route.length - 1);
+  const index = Math.min(Math.floor(scaled), route.length - 2);
+  const localProgress = scaled - index;
+  const start = route[index];
+  const end = route[index + 1];
+
+  return {
+    x: start.x + (end.x - start.x) * localProgress,
+    y: start.y + (end.y - start.y) * localProgress,
+  };
+};
+
 function RouteField() {
   const canvasRef = useRef(null);
 
@@ -723,15 +803,248 @@ function Header({ lang, setLang, t }) {
   );
 }
 
-function Hero({ t, setActiveService }) {
+function TrackingMap({ shipment, t, lang }) {
+  const route = shipment?.route || [];
+  const progress = clamp(Number(shipment?.progress || 0));
+  const currentPosition = getRoutePosition(route, progress);
+  const points = route.map((point) => `${point.x},${point.y}`).join(" ");
+
+  return (
+    <div className="tracking-map" aria-label={t.trackingMapTitle}>
+      <div className="tracking-map-header">
+        <span>{t.trackingMapTitle}</span>
+        <strong>{Math.round(progress * 100)}%</strong>
+      </div>
+      <div className="tracking-map-canvas">
+        <svg viewBox="0 0 100 72" preserveAspectRatio="none" aria-hidden="true">
+          <polyline className="tracking-route-base" points={points} fill="none" />
+          <polyline
+            className="tracking-route-active"
+            points={points}
+            fill="none"
+            pathLength="100"
+            style={{ strokeDasharray: `${progress * 100} 100` }}
+          />
+        </svg>
+        {route.map((point, index) => {
+          const nodeProgress = route.length > 1 ? index / (route.length - 1) : 1;
+          const nodeState = progress + 0.02 >= nodeProgress ? "done" : "pending";
+          return (
+            <span
+              className={`tracking-node ${nodeState}`}
+              key={`${point.nameEn}-${point.x}`}
+              style={{ "--x": `${point.x}%`, "--y": `${point.y}%` }}
+            >
+              <small>{getLocalized(point, "name", lang)}</small>
+            </span>
+          );
+        })}
+        <span
+          className="tracking-live-marker"
+          style={{ "--x": `${currentPosition.x}%`, "--y": `${currentPosition.y}%` }}
+          aria-hidden="true"
+        />
+      </div>
+    </div>
+  );
+}
+
+function TrackingTimeline({ shipment, t, lang }) {
+  return (
+    <div className="tracking-timeline">
+      <strong>{t.trackingMilestones}</strong>
+      <div>
+        {(shipment?.milestones || []).map((milestone) => (
+          <article className={`tracking-step ${milestone.state}`} key={`${milestone.date}-${milestone.labelEn}`}>
+            <span />
+            <div>
+              <small>{milestone.date}</small>
+              <p>{getLocalized(milestone, "label", lang)}</p>
+              <em>{t.trackingStates[milestone.state]}</em>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ShipmentTrackerPanel({ t, lang }) {
   const [trackingValue, setTrackingValue] = useState("");
-  const [trackingResult, setTrackingResult] = useState("");
+  const [trackingData, setTrackingData] = useState({ shipments: [] });
+  const [dataState, setDataState] = useState("loading");
+  const [lookupState, setLookupState] = useState("idle");
+  const [shipment, setShipment] = useState(null);
+
+  const examples = useMemo(() => {
+    const [first, second] = trackingData.shipments;
+    return [
+      first?.id,
+      first?.container,
+      second?.aliases?.[0],
+    ].filter(Boolean);
+  }, [trackingData.shipments]);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetch(trackingDataUrl, { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Tracking data request failed: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (!isActive) {
+          return;
+        }
+        setTrackingData({
+          shipments: Array.isArray(data.shipments) ? data.shipments : [],
+        });
+        setDataState("ready");
+      })
+      .catch(() => {
+        if (!isActive) {
+          return;
+        }
+        setTrackingData({ shipments: [] });
+        setDataState("error");
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  const runLookup = (value) => {
+    const normalizedValue = normalizeTrackingId(value);
+
+    if (!normalizedValue) {
+      setShipment(null);
+      setLookupState("empty");
+      return;
+    }
+
+    const matchedShipment = findShipment(trackingData.shipments, normalizedValue);
+    if (!matchedShipment) {
+      setShipment(null);
+      setLookupState("not-found");
+      return;
+    }
+
+    setShipment(matchedShipment);
+    setLookupState("found");
+  };
 
   const submitTracking = (event) => {
     event.preventDefault();
-    setTrackingResult(t.trackingResult);
+    runLookup(trackingValue);
   };
 
+  const useExample = () => {
+    const example = examples[0] || "";
+    setTrackingValue(example);
+    runLookup(example);
+  };
+
+  const dataLabel =
+    dataState === "loading" ? t.trackingDataLoading : dataState === "error" ? t.trackingDataError : t.trackingDataReady;
+
+  const lookupMessage =
+    lookupState === "empty" ? t.trackingEmpty : lookupState === "not-found" ? t.trackingNotFound : "";
+
+  return (
+    <div className="hero-panel tracking-panel" aria-label={t.trackingTitle}>
+      <div className="panel-heading">
+        <span>{t.trackingTitle}</span>
+        <small>{t.trackingBadge}</small>
+      </div>
+      <form className="tracking-form" onSubmit={submitTracking}>
+        <label>
+          <Search size={17} />
+          <input
+            value={trackingValue}
+            onChange={(event) => setTrackingValue(event.target.value)}
+            placeholder={t.trackingHint}
+            autoComplete="off"
+          />
+        </label>
+        <button type="submit" disabled={dataState !== "ready"}>
+          {t.trackingButton}
+          <ArrowRight size={17} />
+        </button>
+      </form>
+      <div className="tracking-tools">
+        <span className={`tracking-data-state ${dataState}`}>{dataLabel}</span>
+        {!!examples.length && (
+          <div>
+            <small>{t.trackingExamplesLabel}</small>
+            {examples.map((example) => (
+              <button
+                key={example}
+                type="button"
+                onClick={() => {
+                  setTrackingValue(example);
+                  runLookup(example);
+                }}
+              >
+                {example}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <button className="tracking-more" type="button" onClick={useExample} disabled={!examples.length}>
+        {t.trackingMore}
+        <ChevronRight size={16} />
+      </button>
+      {lookupMessage && <p className="tracking-alert">{lookupMessage}</p>}
+      {shipment ? (
+        <div className="tracking-result-card">
+          <div className="tracking-result-top">
+            <span>
+              <small>{shipment.id}</small>
+              <strong>{getLocalized(shipment, "status", lang)}</strong>
+            </span>
+            <em>{shipment.container}</em>
+          </div>
+          <p>{getLocalized(shipment, "current", lang)}</p>
+          <div className="tracking-meta-grid">
+            <span>
+              <small>{t.trackingRoute}</small>
+              <strong>{getLocalized(shipment, "service", lang)}</strong>
+            </span>
+            <span>
+              <small>{t.trackingEta}</small>
+              <strong>{shipment.eta}</strong>
+            </span>
+            <span>
+              <small>{t.trackingLastUpdate}</small>
+              <strong>{shipment.lastUpdated}</strong>
+            </span>
+            <span>
+              <small>{t.trackingProgress}</small>
+              <strong>{Math.round(clamp(Number(shipment.progress || 0)) * 100)}%</strong>
+            </span>
+          </div>
+          <TrackingMap shipment={shipment} t={t} lang={lang} />
+          <TrackingTimeline shipment={shipment} t={t} lang={lang} />
+        </div>
+      ) : (
+        <div className="tracking-placeholder">
+          <Globe2 size={28} />
+          <span>
+            <strong>{t.trackingPendingTitle}</strong>
+            <small>{t.trackingPendingText}</small>
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Hero({ t, lang, setActiveService }) {
   return (
     <section id="home" className="hero">
       <img className="hero-image" src={heroImage} alt={t.heroImageAlt} />
@@ -769,31 +1082,7 @@ function Hero({ t, setActiveService }) {
           </div>
         </div>
 
-        <div className="hero-panel" aria-label={t.trackingTitle}>
-          <div className="panel-heading">
-            <span>{t.trackingTitle}</span>
-            <small>{t.trackingBadge}</small>
-          </div>
-          <form className="tracking-form" onSubmit={submitTracking}>
-            <label>
-              <Search size={17} />
-              <input
-                value={trackingValue}
-                onChange={(event) => setTrackingValue(event.target.value)}
-                placeholder={t.trackingHint}
-              />
-            </label>
-            <button type="submit">
-              {t.trackingButton}
-              <ArrowRight size={17} />
-            </button>
-          </form>
-          <button className="tracking-more" type="button" onClick={() => setTrackingResult(t.trackingResult)}>
-            {t.trackingMore}
-            <ChevronRight size={16} />
-          </button>
-          {trackingResult && <p className="tracking-result">{trackingResult}</p>}
-        </div>
+        <ShipmentTrackerPanel t={t} lang={lang} />
       </div>
 
       <div className="quick-dock" aria-label={t.quickServicesLabel}>
@@ -1128,7 +1417,7 @@ export function App() {
     <>
       <Header lang={lang} setLang={setLang} t={t} />
       <main>
-        <Hero t={t} setActiveService={setActiveService} />
+        <Hero t={t} lang={lang} setActiveService={setActiveService} />
         <Stats t={t} />
         <Process t={t} />
         <Services t={t} activeKey={activeService} setActiveKey={setActiveService} />
