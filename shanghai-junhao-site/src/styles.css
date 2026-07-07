@@ -775,6 +775,76 @@ p {
   margin-top: 3px;
 }
 
+.capabilities-section {
+  background:
+    radial-gradient(circle at 85% 12%, rgba(66, 221, 255, 0.1), transparent 24%),
+    linear-gradient(90deg, rgba(4, 125, 138, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(4, 125, 138, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, #f7fbfb 0%, #ffffff 100%);
+  background-size: auto, 58px 58px, 58px 58px, auto;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.capability-grid article {
+  min-height: 310px;
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 26px;
+  border: 1px solid rgba(4, 125, 138, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 252, 252, 0.9)),
+    radial-gradient(circle at 18% 18%, rgba(238, 73, 55, 0.08), transparent 32%);
+  box-shadow: 0 18px 44px rgba(8, 34, 45, 0.08);
+}
+
+.capability-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: white;
+  background: linear-gradient(135deg, var(--teal), var(--coral));
+  box-shadow: 0 16px 34px rgba(4, 125, 138, 0.2);
+}
+
+.capability-grid h3 {
+  color: var(--ink);
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.capability-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.capability-tags span {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(4, 125, 138, 0.15);
+  border-radius: 8px;
+  color: #17404b;
+  background: rgba(4, 125, 138, 0.06);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.capability-grid p {
+  color: var(--muted);
+  line-height: 1.68;
+}
+
 .network-section {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
@@ -986,6 +1056,16 @@ p {
 
 .about-block h2 {
   color: white;
+}
+
+.mission-quote {
+  display: block;
+  margin-top: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 .compact-heading {
@@ -1310,6 +1390,10 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .faq-panel {
     grid-template-columns: 1fr;
   }
@@ -1499,7 +1583,8 @@ p {
   }
 
   .map-grid,
-  .scenario-grid {
+  .scenario-grid,
+  .capability-grid {
     grid-template-columns: 1fr;
   }
 

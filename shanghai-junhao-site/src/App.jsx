@@ -58,21 +58,21 @@ const content = {
     eyebrow: "中美贸易物流与全球货运代理伙伴",
     headline: "连接全球，驱动贸易。",
     subhead:
-      "为中美进出口企业提供海运、空运、清关、仓储与门到门配送服务。我们整合航线、海外代理和本地清关资源，帮助客户降低运输成本、提升交付确定性。",
-    heroPoints: ["安全高效", "精准便捷", "全程可视", "门到门交付"],
-    trackingTitle: "快速查询 / 业务入口",
-    trackingBadge: "货物节点查询",
-    trackingHint: "输入提单号 / 集装箱号 / 订单号",
-    trackingButton: "查询状态",
+      "专注国际海运、空运、仓储、报关、商检、卡车运输、铁路运输、货物保险与多式联运服务。依托稳定的船公司、航空公司、港口仓储、海外代理和清关资源，为客户提供安全、高效、精准、便捷的一体化物流解决方案。",
+    heroPoints: ["承运资源", "海外代理", "全程节点", "多式联运"],
+    trackingTitle: "货物状态咨询",
+    trackingBadge: "业务人员协助查询",
+    trackingHint: "输入提单号 / 箱号 / 订单号",
+    trackingButton: "提交咨询",
     trackingMore: "联系业务获取节点",
     trackingResult:
-      "追踪系统正在接入中。请联系业务人员获取最新货物节点，我们会按订舱、提柜、报关、出运和签收状态反馈。",
+      "已收到查询信息。正式货物状态将由业务人员结合订舱、提货、装箱、报关、出运、目的港和签收节点协助确认。",
     stats: [
-      ["10+", "行业经验", "深耕货运代理"],
-      ["1000+", "服务客户", "累计客户资源"],
-      ["50+", "服务国家和地区", "覆盖主要航线"],
-      ["2万+", "年出运量", "标准箱运输能力"],
-      ["稳定交付", "关键节点反馈", "过程协同跟进"],
+      ["多年", "行业经验", "深耕货运代理"],
+      ["全球", "代理网络", "覆盖重点区域"],
+      ["多类", "货物操作", "整柜拼箱冷藏散杂"],
+      ["全程", "节点反馈", "从订舱到签收"],
+      ["稳健", "承运资源", "船司航司与港口协作"],
     ],
     statsLabel: "公司服务数据",
     statsNote:
@@ -106,11 +106,11 @@ const content = {
         en: "整柜 / 拼箱 / 空运",
         icon: "sea",
         desc:
-          "适用于跨境电商、传统贸易、工厂出口和项目货运输送需求。我们根据货量、时效和预算，为客户匹配整柜、拼箱、空运、散杂货及冷藏运输方案。",
+          "适用于跨境电商、传统贸易、工厂出口和项目货运输需求。我们根据货量、时效和预算，为客户匹配整柜、拼箱、散货、冷藏箱、空运及相关保险方案。",
         bullets: [
-          "比较不同船期、航司和路线，平衡成本与时效",
-          "协助订舱、提货、装箱、报关、保险和货物跟踪",
-          "对接海外代理、港口、仓库和末端派送资源",
+          "提供船期、航班、订舱与出运计划，平衡成本与时效",
+          "协助出口单证、现场监装、清关、拆箱与货物保险代理",
+          "支持提货、门点派送及海外代理、港口、仓库资源衔接",
         ],
       },
       {
@@ -119,11 +119,11 @@ const content = {
         en: "报关 / 商检 / 单证",
         icon: "customs",
         desc:
-          "面向进出口企业处理报关、商检、法检、植检、木箱熏蒸和核销资料回传，降低货物在通关节点的等待和沟通成本。",
+          "面向进出口企业处理报关、商检、法定检验、植检、木质包装熏蒸和核销资料回传，降低货物在通关节点的等待和沟通成本。",
         bullets: [
           "提前核对品名、海关编码、单证和监管条件",
-          "联动海关、码头、场站和商检单位处理异常节点",
-          "适用于一般贸易、样品、设备、木包装及法检货物",
+          "联动海关、码头、场站、商检单位和代理处理异常节点",
+          "协助办理法定检验、植检、木质包装熏蒸及相关单证回传",
         ],
       },
       {
@@ -132,24 +132,24 @@ const content = {
         en: "仓储 / 分拨 / 派送",
         icon: "warehouse",
         desc:
-          "围绕港口场站、铁路站点和仓库节点，提供收货、卸货、短驳、分拣、打托、打带、分批出库和集卡调度服务。",
+          "围绕港口场站、铁路站点和仓库节点，提供铁路站点提货、铁路货物卸载、仓储、分拣、包装、打托、绑扎、批次管理与配送服务。",
         bullets: [
           "按货物属性优化装箱方案，提高箱容利用率",
-          "现场监装确保配载准确、安全、可追溯",
-          "多吨位集卡车队灵活调度，降低转运成本",
+          "现场监装、分批入库、分拣配送，确保配载准确可追溯",
+          "多吨位集卡车队灵活调度，降低综合转运成本",
         ],
       },
       {
         key: "door",
-        title: "门到门配送",
-        en: "提货 / 清关 / 签收",
+        title: "门到门与多式联运",
+        en: "提货 / 多式联运 / 签收",
         icon: "truck",
         desc:
-          "从美国提货、出口操作、国际运输、目的港清关到中国境内派送，整合多个环节为客户减少重复沟通。",
+          "从起运地提货、出口操作、国际运输、目的港清关到门点派送，组合海运、空运、铁路、卡车和仓储资源，为客户减少多方沟通。",
         bullets: [
           "支持工厂交货、离岸价、未完税交货、完税后交货等常见贸易条款",
-          "根据目的地、品类和交付周期匹配卡车与仓配资源",
-          "适合需要一站式报价和节点反馈的中小批量货物",
+          "根据目的地、品类和交付周期匹配卡车、铁路与仓配资源",
+          "适合需要一站式报价、货物保险和节点反馈的跨境货物",
         ],
       },
       {
@@ -158,10 +158,10 @@ const content = {
         en: "美国口岸 / 海外代理",
         icon: "network",
         desc:
-          "依托美国主要港口和海外代理资源，覆盖提货、仓储中转、出口文件、海空运订舱、目的港清关和末端派送协作。",
+          "依托美国主要港口和海外代理资源，覆盖提货、仓储中转、出口文件、海空运订舱、清关协调和最后一公里派送协作。",
         bullets: [
           "覆盖洛杉矶、长滩、纽约、休斯敦、萨凡纳等主要口岸",
-          "支持北美到中国及其他区域的整柜、拼箱与空运方案",
+          "支持北美、中国及其他区域之间的整柜、拼箱与空运方案",
           "连接马士基、美森、太平船务、赫伯罗特等承运资源",
         ],
       },
@@ -171,18 +171,48 @@ const content = {
         en: "大件 / 散杂货 / 项目货",
         icon: "package",
         desc:
-          "面向机械设备、钢材、袋装货、自备箱、大件重货和多节点工程类货物，制定装载、港口接货和陆运衔接方案。",
+          "承接大宗散货、普通散杂货、袋装货、机械设备、钢材、自备箱运输和多节点工程类货物，制定装载、港口接货和陆运衔接方案。",
         bullets: [
-          "长期合作散杂货船东与专业重型陆运资源",
-          "响应迅速的项目操作团队负责全程协调",
+          "对接散杂货船东、地面运输、港口接货和现场装运资源",
+          "根据货物尺寸、重量、包装和装卸条件制定执行方案",
           "从运输路线、装卸计划到场站衔接均可按项目定制",
         ],
+      },
+    ],
+    capabilitiesTitle: "关键业务能力",
+    capabilitiesKicker: "资料补充",
+    capabilitiesLead:
+      "把公司资料里的专业能力集中展开，便于客户判断贸易条款、承运资源和落地操作是否匹配自己的货物。",
+    capabilities: [
+      {
+        title: "贸易条款支持",
+        icon: "inspection",
+        items: ["离岸价", "工厂交货", "未完税交货", "完税后交货"],
+        desc: "根据贸易条款衔接起运地提货、出口报关、国际运输、目的港清关与门点派送。",
+      },
+      {
+        title: "承运与航线资源",
+        icon: "sea",
+        items: ["马士基", "美森", "太平船务", "赫伯罗特"],
+        desc: "与主要承运资源保持合作，为客户匹配更具竞争力的航线、舱位和价格方案。",
+      },
+      {
+        title: "保险与多式联运",
+        icon: "insurance",
+        items: ["海运", "空运", "铁路", "卡车"],
+        desc: "可根据货物类型与路线协助办理运输保险，并组合多种运输方式降低跨境风险。",
+      },
+      {
+        title: "全程节点反馈",
+        icon: "multimodal",
+        items: ["订舱", "提货", "报关", "签收"],
+        desc: "从订舱、提货、装箱、报关、出运到目的港交付，提供关键状态反馈。",
       },
     ],
     networkTitle: "全球代理网络",
     networkKicker: "全球网络",
     networkLead:
-      "我们与海外代理建立长期合作，围绕美国主要口岸、中国核心港口和重点区域代理，形成可执行的跨境运输、清关、仓储与派送协作网络。",
+      "我们与海外代理建立长期合作，围绕美国主要口岸、中国核心港口和重点区域代理，形成可执行的跨境运输、清关、仓储与派送协作网络，并可承接常见贸易条款下的整柜、拼箱及门到门物流服务。",
     mapLabel: "重点港口网络",
     portGroups: [
       ["美国主要港口", ["洛杉矶", "长滩", "纽约", "休斯敦", "萨凡纳"]],
@@ -201,11 +231,12 @@ const content = {
     advantageTitle: "为什么选择上海隽昊",
     advantageKicker: "核心优势",
     advantages: [
-      ["中美链路经验", "熟悉美国主要港口、中国进口清关与末端派送流程。"],
-      ["多式联运整合", "整合海运、空运、卡车、仓储、清关和保险资源。"],
-      ["过程可追踪", "从订舱、提柜、报关到签收，提供关键节点反馈。"],
-      ["成本与时效平衡", "根据货量、品类和交付周期，匹配更合适的运输方案。"],
+      ["稳定承运资源", "与主要船公司、航空公司和港口资源保持合作，具备航线与价格方案整合能力。"],
+      ["全球代理网络", "覆盖北美、中南美、欧洲、中东及印巴、东南亚和澳洲等重点区域。"],
+      ["全程节点反馈", "提供货物运输状态跟踪，并协调海关、堆场、码头、车队和代理处理突发情况。"],
+      ["定制化物流方案", "根据货物类型、时效要求和预算，设计安全、精准、成本可控的运输方案。"],
     ],
+    missionQuote: "以客户选择为使命，以客户成功为服务标准。",
     aboutTitle: "公司简介",
     aboutKicker: "公司简介",
     about:
@@ -224,7 +255,8 @@ const content = {
     faqKicker: "常见问题",
     faq: [
       ["报价需要哪些信息？", "通常需要货物品名、件数、重量体积、起运地、目的地、贸易条款、期望时效以及是否需要清关和派送。"],
-      ["是否支持清关和门到门？", "可以。我们可根据贸易条款和目的地要求，组合报关清关、仓储中转、卡车派送和回单反馈。"],
+      ["支持哪些贸易条款？", "可根据离岸价、工厂交货、未完税交货、完税后交货等常见贸易条款，组合提货、清关、运输和派送。"],
+      ["是否支持货物保险？", "可根据货物类型与运输路线协助办理货物运输保险，降低跨境运输过程中的风险。"],
       ["海运和空运怎么选择？", "海运更适合大批量和成本敏感货物，空运更适合时效敏感、小批量或紧急补货。实际方案会结合预算、时效和品类判断。"],
       ["能处理大件或项目货吗？", "可以先评估尺寸、重量、包装和装卸条件，再匹配散杂货船东、重型陆运和港口接货资源。"],
     ],
@@ -273,21 +305,21 @@ const content = {
     eyebrow: "U.S.-to-China export logistics and global freight forwarding",
     headline: "Global routes, sharper trade.",
     subhead:
-      "We help importers, exporters and trading companies move cargo with sea freight, air freight, customs clearance, warehousing and door-to-door delivery. Our team connects carrier capacity, overseas agents and local clearance resources to improve cost control and delivery certainty.",
-    heroPoints: ["Safe & efficient", "Precise & convenient", "Visible end to end", "Door-to-door delivery"],
-    trackingTitle: "Quick Inquiry / Operations Entry",
-    trackingBadge: "Track your shipment",
+      "We provide international sea freight, air freight, warehousing, customs clearance, commodity inspection, trucking, rail transport, cargo insurance and multimodal logistics. By connecting carriers, airlines, ports, warehouses, overseas agents and clearance resources, we help customers move cargo safely, efficiently and with clearer handoffs.",
+    heroPoints: ["Carrier resources", "Overseas agents", "Milestone updates", "Multimodal transport"],
+    trackingTitle: "Cargo Status Support",
+    trackingBadge: "Operations-assisted inquiry",
     trackingHint: "Enter B/L, container or order number",
-    trackingButton: "Check Status",
+    trackingButton: "Submit Inquiry",
     trackingMore: "Contact operations for milestones",
     trackingResult:
-      "Tracking integration is in progress. Please contact the operations team for the latest milestone updates across booking, pickup, customs, departure and delivery.",
+      "Inquiry received. The operations team will help confirm cargo milestones across booking, pickup, loading, customs, departure, destination handling and final delivery.",
     stats: [
-      ["10+", "Years of Experience", "Industry experience"],
-      ["1000+", "Global Clients", "Client relationships"],
-      ["50+", "Countries & Regions", "Service coverage"],
-      ["20K+", "Annual Shipments", "TEU handled"],
-      ["Reliable", "Milestone Updates", "Delivery coordination"],
+      ["Years", "Industry Experience", "Freight forwarding focus"],
+      ["Global", "Agency Network", "Key regional coverage"],
+      ["Diverse", "Cargo Handling", "FCL, LCL, reefer, breakbulk"],
+      ["End-to-end", "Milestone Updates", "Booking through delivery"],
+      ["Stable", "Carrier Resources", "Carrier, airline and port coordination"],
     ],
     statsNote:
       "Figures summarize historical service capability. Actual pricing, timing and delivery arrangements depend on route, customs inspection, port congestion and final-mile conditions.",
@@ -320,11 +352,11 @@ const content = {
         en: "FCL / LCL / Air",
         icon: "sea",
         desc:
-          "For e-commerce replenishment, traditional trade, factory exports and project cargo, we match FCL, LCL, air freight, breakbulk and reefer options to cargo volume, budget and timing.",
+          "For e-commerce replenishment, traditional trade, factory exports and project cargo, we match FCL, LCL, bulk cargo, reefer containers, air freight and cargo insurance options to cargo volume, budget and timing.",
         bullets: [
-          "Compare schedules, airlines and route options to balance cost and speed",
-          "Coordinate booking, pickup, loading, customs, insurance and cargo tracking",
-          "Connect overseas agents, ports, warehouses and final-mile delivery resources",
+          "Provide sailing schedules, flight schedules, booking and departure plans",
+          "Coordinate export documents, loading supervision, customs clearance, devanning and cargo insurance agency",
+          "Support pickup, door delivery and overseas agent, port and warehouse handoffs",
         ],
       },
       {
@@ -333,11 +365,11 @@ const content = {
         en: "Customs / Inspection / Documents",
         icon: "customs",
         desc:
-          "Customs specialists support import and export declaration, inspection, phytosanitary steps, fumigation and verification document return to reduce delay at clearance nodes.",
+          "Customs specialists support import and export customs formalities, commodity inspection, statutory inspection, phytosanitary inspection, wooden packing fumigation and verification document return.",
         bullets: [
           "Review product name, HS code, documents and regulatory conditions early",
-          "Coordinate customs, terminal, container yard and inspection issues",
-          "Support general trade, samples, equipment, wooden packing and statutory inspection cargo",
+          "Coordinate customs, terminals, container yards, inspection authorities and agents when exceptions occur",
+          "Support statutory inspection, phytosanitary inspection, wooden packing fumigation and related document return",
         ],
       },
       {
@@ -346,24 +378,24 @@ const content = {
         en: "Storage / Distribution / Delivery",
         icon: "warehouse",
         desc:
-          "Port yards, rail stations and warehouse nodes support receiving, unloading, short-haul transfer, sorting, packing, strapping, palletizing, batch release and truck dispatch.",
+          "Port yards, rail stations and warehouse nodes support railway station pickup, rail cargo unloading, storage, sorting, packaging, palletizing, strapping, batch management and distribution delivery.",
         bullets: [
           "Optimize container loading layouts to improve utilization",
-          "Supervise loading for safer, traceable and more accurate stowage",
-          "Use flexible trucking resources to reduce transfer cost",
+          "Supervise loading, batch warehousing, sorting and distribution for traceable handling",
+          "Use multi-tonnage container trucks to reduce overall transfer cost",
         ],
       },
       {
         key: "door",
-        title: "Door-to-Door Delivery",
-        en: "Pickup / Clearance / Delivery",
+        title: "Door-to-Door & Multimodal Transport",
+        en: "Pickup / Multimodal / Delivery",
         icon: "truck",
         desc:
-          "From U.S. pickup and export handling to international transport, destination customs and delivery in China, we connect multiple legs into one coordinated path.",
+          "From origin pickup and export handling to international transport, destination customs and door delivery, we combine ocean, air, rail, trucking and warehousing resources into one coordinated path.",
         bullets: [
           "Support common trade terms including EXW, FOB, DDU and DDP",
-          "Match trucking and warehouse resources by destination, cargo type and timing",
-          "Useful for shippers who need one quote and clear milestone communication",
+          "Match trucking, rail and warehousing resources by destination, cargo type and timing",
+          "Useful for shippers who need one quote, cargo insurance and milestone communication",
         ],
       },
       {
@@ -372,10 +404,10 @@ const content = {
         en: "U.S. gateways / Overseas agents",
         icon: "network",
         desc:
-          "U.S. port and overseas agent resources cover pickup, warehouse transfer, export documentation, sea and air booking, destination clearance and delivery coordination.",
+          "U.S. port and overseas agent resources cover pickup, warehouse transfer, export documentation, sea and air booking, customs coordination and last-mile delivery.",
         bullets: [
           "Cover major gateways such as Los Angeles, Long Beach, New York, Houston and Savannah",
-          "Support FCL, LCL and air freight options from North America to China and beyond",
+          "Support FCL, LCL and air freight options between North America, China and other regions",
           "Coordinate carrier resources including MAERSK, MATSON, PIL and Hapag-Lloyd",
         ],
       },
@@ -385,18 +417,48 @@ const content = {
         en: "Oversized / Breakbulk / Project cargo",
         icon: "package",
         desc:
-          "For machinery, steel products, bagged goods, self-owned containers, oversized cargo and multi-node engineering freight, we plan loading, port receiving and land transport handoffs.",
+          "For bulk goods, general breakbulk cargo, bagged goods, machinery and equipment, steel products, self-owned containers and multi-node project freight, we plan loading, port receiving and land transport handoffs.",
         bullets: [
-          "Long-term breakbulk vessel-owner and heavy-duty trucking resources",
-          "Responsive project operations team for end-to-end coordination",
+          "Coordinate breakbulk vessel owners, ground transportation, port receiving and on-site loading resources",
+          "Plan around cargo dimensions, weight, packaging and loading conditions",
           "Tailored routing, loading, unloading and terminal handoff planning",
         ],
+      },
+    ],
+    capabilitiesTitle: "Key Operating Capabilities",
+    capabilitiesKicker: "DOCUMENTED STRENGTHS",
+    capabilitiesLead:
+      "These details expand the company file into practical website content so shippers can quickly evaluate trade terms, carrier resources and operational coverage.",
+    capabilities: [
+      {
+        title: "Trade Terms",
+        icon: "inspection",
+        items: ["FOB", "EXW", "DDU", "DDP"],
+        desc: "Connect origin pickup, export customs, international transport, destination clearance and door delivery according to trade terms.",
+      },
+      {
+        title: "Carrier Resources",
+        icon: "sea",
+        items: ["MAERSK", "MATSON", "PIL", "Hapag-Lloyd"],
+        desc: "Coordinate major carrier resources to match competitive routes, capacity and pricing options.",
+      },
+      {
+        title: "Insurance & Multimodal",
+        icon: "insurance",
+        items: ["Ocean", "Air", "Rail", "Truck"],
+        desc: "Arrange cargo insurance by commodity and route, and combine transport modes to reduce cross-border risk.",
+      },
+      {
+        title: "Milestone Feedback",
+        icon: "multimodal",
+        items: ["Booking", "Pickup", "Customs", "Delivery"],
+        desc: "Provide key updates from booking, pickup, loading and customs through departure, destination handling and delivery.",
       },
     ],
     networkTitle: "Global Agency Network",
     networkKicker: "GLOBAL COVERAGE",
     networkLead:
-      "Long-term overseas partnerships connect key U.S. gateways, core China ports and regional agents into an executable transport, clearance, warehousing and delivery network.",
+      "Long-term overseas partnerships connect key U.S. gateways, core China ports and regional agents into an executable transport, clearance, warehousing and delivery network, including FCL, LCL and door-to-door services under common trade terms.",
     mapLabel: "Key port network",
     portGroups: [
       ["Major U.S. Gateways", ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah"]],
@@ -415,11 +477,12 @@ const content = {
     advantageTitle: "Why Shanghai Junhao",
     advantageKicker: "WHY US",
     advantages: [
-      ["U.S.-China Route Experience", "Familiar with U.S. gateways, China import clearance and final-mile delivery flows."],
-      ["Multimodal Integration", "Combine sea freight, air freight, trucking, warehousing, customs and cargo insurance."],
-      ["Trackable Milestones", "Provide key updates from booking and pickup through customs clearance and delivery."],
-      ["Cost-Time Balance", "Match transport plans to cargo volume, category and delivery cycle."],
+      ["Stable Carrier Resources", "Coordinate major shipping lines, airlines and port resources to build stronger route and pricing options."],
+      ["Global Agency Network", "Cover North America, Central & South America, Europe, Middle East & Indian Subcontinent, Southeast Asia and Australia."],
+      ["End-to-end Milestone Feedback", "Track cargo status and coordinate customs, yards, terminals, trucking teams and agents when exceptions arise."],
+      ["Customized Logistics Plans", "Design safer, more precise and cost-controlled plans by cargo type, timing requirement and budget."],
     ],
+    missionQuote: "Take clients' choices as our mission, and clients' success as our service standard.",
     aboutTitle: "Company Profile",
     aboutKicker: "COMPANY PROFILE",
     about:
@@ -438,7 +501,8 @@ const content = {
     faqKicker: "FAQ",
     faq: [
       ["What information is needed for a quote?", "Cargo name, quantity, weight and volume, origin, destination, trade terms, timing expectation and whether clearance or delivery is required."],
-      ["Can you support clearance and door-to-door delivery?", "Yes. We can combine customs clearance, warehousing, trucking, delivery and proof-of-delivery feedback depending on the trade terms."],
+      ["Which trade terms can you support?", "We can combine pickup, clearance, transport and delivery under common terms such as FOB, EXW, DDU and DDP."],
+      ["Can you support cargo insurance?", "Yes. We can assist with cargo transport insurance based on commodity type and route to reduce cross-border risk."],
       ["Should I choose sea freight or air freight?", "Sea freight is usually better for larger or cost-sensitive cargo. Air freight is better for urgent, small-batch or time-sensitive shipments."],
       ["Can you handle oversized or project cargo?", "Yes. We first evaluate dimensions, weight, packaging and loading conditions, then match breakbulk, heavy-duty trucking and port resources."],
     ],
@@ -838,6 +902,34 @@ function Services({ t, activeKey, setActiveKey }) {
   );
 }
 
+function Capabilities({ t }) {
+  return (
+    <section className="section capabilities-section">
+      <div className="section-heading wide">
+        <p>{t.capabilitiesKicker}</p>
+        <h2>{t.capabilitiesTitle}</h2>
+        <span>{t.capabilitiesLead}</span>
+      </div>
+      <div className="capability-grid">
+        {t.capabilities.map((capability) => (
+          <article key={capability.title}>
+            <div className="capability-icon">
+              <IconByName name={capability.icon} size={26} />
+            </div>
+            <h3>{capability.title}</h3>
+            <div className="capability-tags">
+              {capability.items.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+            <p>{capability.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function NetworkSection({ t }) {
   return (
     <section id="network" className="network-section">
@@ -929,6 +1021,7 @@ function Advantages({ t }) {
         <p>{t.aboutKicker}</p>
         <h2>{t.aboutTitle}</h2>
         <span>{t.about}</span>
+        <strong className="mission-quote">{t.missionQuote}</strong>
       </div>
       <div>
         <div className="section-heading compact-heading">
@@ -1017,6 +1110,7 @@ export function App() {
         <Stats t={t} />
         <Process t={t} />
         <Services t={t} activeKey={activeService} setActiveKey={setActiveService} />
+        <Capabilities t={t} />
         <NetworkSection t={t} />
         <Advantages t={t} />
         <ScenariosAndFaq t={t} />
