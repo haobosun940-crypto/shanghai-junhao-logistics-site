@@ -52,36 +52,41 @@ const content = {
     quote: "获取报价",
     brand: "上海隽昊",
     brandFull: "上海隽昊国际货运代理有限公司",
-    englishName: "Shanghai Eastern Worldwide Logistics Co., Ltd.",
+    brandSub: "中美贸易与全球物流服务商",
+    englishName: "上海隽昊国际货运代理有限公司",
+    heroImageAlt: "数字航线网络中的集装箱船",
     eyebrow: "中美贸易物流与全球货运代理伙伴",
     headline: "连接全球，驱动贸易。",
     subhead:
       "为中美进出口企业提供海运、空运、清关、仓储与门到门配送服务。我们整合航线、海外代理和本地清关资源，帮助客户降低运输成本、提升交付确定性。",
     heroPoints: ["安全高效", "精准便捷", "全程可视", "门到门交付"],
     trackingTitle: "快速查询 / 业务入口",
+    trackingBadge: "货物节点查询",
     trackingHint: "输入提单号 / 集装箱号 / 订单号",
     trackingButton: "查询状态",
     trackingMore: "联系业务获取节点",
     trackingResult:
       "追踪系统正在接入中。请联系业务人员获取最新货物节点，我们会按订舱、提柜、报关、出运和签收状态反馈。",
     stats: [
-      ["10+", "行业经验", "Years of Experience"],
-      ["1000+", "服务客户", "Global Clients"],
-      ["50+", "服务国家和地区", "Countries & Regions"],
-      ["20K+", "年出运量(TEU)", "Annual Shipments"],
-      ["稳定交付", "关键节点反馈", "Reliable Delivery"],
+      ["10+", "行业经验", "深耕货运代理"],
+      ["1000+", "服务客户", "累计客户资源"],
+      ["50+", "服务国家和地区", "覆盖主要航线"],
+      ["2万+", "年出运量", "标准箱运输能力"],
+      ["稳定交付", "关键节点反馈", "过程协同跟进"],
     ],
+    statsLabel: "公司服务数据",
     statsNote:
       "数据用于展示公司历史服务能力，具体价格、时效与交付安排会受航线、海关查验、港口拥堵和目的地派送条件影响。",
     quickServices: [
-      ["海运服务", "Sea Freight", "sea", "sea"],
-      ["空运服务", "Air Freight", "air", "sea"],
-      ["仓储配送", "Warehousing", "warehouse", "warehouse"],
-      ["报关清关", "Customs Clearance", "customs", "customs"],
-      ["门到门服务", "Door-to-Door", "truck", "door"],
+      ["海运服务", "整柜 / 拼箱", "sea", "sea"],
+      ["空运服务", "急件 / 样品", "air", "sea"],
+      ["仓储配送", "入仓 / 分拨", "warehouse", "warehouse"],
+      ["报关清关", "报关 / 商检", "customs", "customs"],
+      ["门到门服务", "提货 / 派送", "truck", "door"],
     ],
+    quickServicesLabel: "服务快捷入口",
     processTitle: "我们的操作流程",
-    processKicker: "HOW WE OPERATE",
+    processKicker: "业务流程",
     process: [
       ["咨询询价", "确认货物类型、起运港、目的港、贸易条款与时效要求。"],
       ["方案订舱", "比较船期、航线和舱位，匹配成本与交付周期。"],
@@ -91,14 +96,14 @@ const content = {
       ["交付签收", "协调海外代理、仓库、卡车派送与回单反馈。"],
     ],
     servicesTitle: "服务与解决方案",
-    servicesKicker: "WHAT WE DELIVER",
+    servicesKicker: "核心服务",
     servicesLead:
       "围绕“怎么运、怎么清关、怎么交付”，我们把航线、仓库、海关、场站、车队和海外代理连接成可执行的物流方案。",
     services: [
       {
         key: "sea",
         title: "海运与空运货代",
-        en: "Sea & Air Freight Forwarding",
+        en: "整柜 / 拼箱 / 空运",
         icon: "sea",
         desc:
           "适用于跨境电商、传统贸易、工厂出口和项目货运输送需求。我们根据货量、时效和预算，为客户匹配整柜、拼箱、空运、散杂货及冷藏运输方案。",
@@ -111,12 +116,12 @@ const content = {
       {
         key: "customs",
         title: "报关清关与商检",
-        en: "Customs Clearance & Commodity Inspection",
+        en: "报关 / 商检 / 单证",
         icon: "customs",
         desc:
           "面向进出口企业处理报关、商检、法检、植检、木箱熏蒸和核销资料回传，降低货物在通关节点的等待和沟通成本。",
         bullets: [
-          "提前核对品名、HS 编码、单证和监管条件",
+          "提前核对品名、海关编码、单证和监管条件",
           "联动海关、码头、场站和商检单位处理异常节点",
           "适用于一般贸易、样品、设备、木包装及法检货物",
         ],
@@ -124,7 +129,7 @@ const content = {
       {
         key: "warehouse",
         title: "仓储与配送",
-        en: "Warehousing & Distribution",
+        en: "仓储 / 分拨 / 派送",
         icon: "warehouse",
         desc:
           "围绕港口场站、铁路站点和仓库节点，提供收货、卸货、短驳、分拣、打托、打带、分批出库和集卡调度服务。",
@@ -137,12 +142,12 @@ const content = {
       {
         key: "door",
         title: "门到门配送",
-        en: "Door-to-Door Delivery",
+        en: "提货 / 清关 / 签收",
         icon: "truck",
         desc:
           "从美国提货、出口操作、国际运输、目的港清关到中国境内派送，整合多个环节为客户减少重复沟通。",
         bullets: [
-          "支持 EXW、FOB、DDU、DDP 等常见贸易条款",
+          "支持工厂交货、离岸价、未完税交货、完税后交货等常见贸易条款",
           "根据目的地、品类和交付周期匹配卡车与仓配资源",
           "适合需要一站式报价和节点反馈的中小批量货物",
         ],
@@ -150,20 +155,20 @@ const content = {
       {
         key: "network",
         title: "美国代理网络",
-        en: "U.S. Agent Network",
+        en: "美国口岸 / 海外代理",
         icon: "network",
         desc:
           "依托美国主要港口和海外代理资源，覆盖提货、仓储中转、出口文件、海空运订舱、目的港清关和末端派送协作。",
         bullets: [
-          "覆盖 Los Angeles、Long Beach、New York、Houston、Savannah 等主要口岸",
+          "覆盖洛杉矶、长滩、纽约、休斯敦、萨凡纳等主要口岸",
           "支持北美到中国及其他区域的整柜、拼箱与空运方案",
-          "连接 MAERSK、MATSON、PIL、Hapag-Lloyd 等承运资源",
+          "连接马士基、美森、太平船务、赫伯罗特等承运资源",
         ],
       },
       {
         key: "project",
         title: "项目与散杂货物流",
-        en: "Project, Breakbulk & Bulk Cargo",
+        en: "大件 / 散杂货 / 项目货",
         icon: "package",
         desc:
           "面向机械设备、钢材、袋装货、自备箱、大件重货和多节点工程类货物，制定装载、港口接货和陆运衔接方案。",
@@ -175,22 +180,26 @@ const content = {
       },
     ],
     networkTitle: "全球代理网络",
-    networkKicker: "GLOBAL COVERAGE",
+    networkKicker: "全球网络",
     networkLead:
       "我们与海外代理建立长期合作，围绕美国主要口岸、中国核心港口和重点区域代理，形成可执行的跨境运输、清关、仓储与派送协作网络。",
+    mapLabel: "重点港口网络",
     portGroups: [
-      ["美国主要港口", ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah"]],
-      ["中国主要港口", ["Shanghai", "Ningbo", "Qingdao", "Shenzhen", "Xiamen"]],
+      ["美国主要港口", ["洛杉矶", "长滩", "纽约", "休斯敦", "萨凡纳"]],
+      ["中国主要港口", ["上海", "宁波", "青岛", "深圳", "厦门"]],
     ],
+    routeLegend: ["美国口岸", "中国港口"],
+    mapDots: ["洛杉矶", "长滩", "纽约", "休斯敦", "萨凡纳", "上海", "宁波", "青岛"],
     regions: [
-      ["North America", "美国主要港口代理、卡车派送、仓储中转"],
-      ["Central & South America", "中南美航线代理与目的港协作"],
-      ["Europe", "欧线海运、清关资料和转运协同"],
-      ["Middle East & Indian Subcontinent", "中东及印巴航线衔接与项目货支持"],
-      ["Southeast Asia", "东南亚支线、转运与区域配送"],
-      ["Australia", "澳洲港口代理和门点派送协作"],
+      ["北美", "美国主要港口代理、卡车派送、仓储中转"],
+      ["中南美", "中南美航线代理与目的港协作"],
+      ["欧洲", "欧线海运、清关资料和转运协同"],
+      ["中东及印巴", "中东及印巴航线衔接与项目货支持"],
+      ["东南亚", "东南亚支线、转运与区域配送"],
+      ["澳洲", "澳洲港口代理和门点派送协作"],
     ],
     advantageTitle: "为什么选择上海隽昊",
+    advantageKicker: "核心优势",
     advantages: [
       ["中美链路经验", "熟悉美国主要港口、中国进口清关与末端派送流程。"],
       ["多式联运整合", "整合海运、空运、卡车、仓储、清关和保险资源。"],
@@ -198,10 +207,11 @@ const content = {
       ["成本与时效平衡", "根据货量、品类和交付周期，匹配更合适的运输方案。"],
     ],
     aboutTitle: "公司简介",
+    aboutKicker: "公司简介",
     about:
-      "上海隽昊国际货运代理有限公司是一家面向中美贸易和全球供应链的国际物流服务商，对外英文名称为 Shanghai Eastern Worldwide Logistics Co., Ltd.。公司围绕美国出口、中国进口及全球货运代理场景，提供海空运、仓储、清关、商检、陆运、保险及多式联运服务。",
+      "上海隽昊国际货运代理有限公司是一家面向中美贸易和全球供应链的国际物流服务商。公司围绕美国出口、中国进口及全球货运代理场景，提供海空运、仓储、清关、商检、陆运、保险及多式联运服务。",
     scenariosTitle: "典型服务场景",
-    scenariosKicker: "SERVICE SCENARIOS",
+    scenariosKicker: "服务场景",
     scenariosLead:
       "把服务从“能做什么”落到真实业务场景，客户可以更快判断适合自己的运输路径。",
     scenarios: [
@@ -211,7 +221,7 @@ const content = {
       ["门到门清关派送", "适合希望减少多方沟通的客户，从海外提货到国内签收提供整段方案。", "truck"],
     ],
     faqTitle: "常见问题",
-    faqKicker: "FAQ",
+    faqKicker: "常见问题",
     faq: [
       ["报价需要哪些信息？", "通常需要货物品名、件数、重量体积、起运地、目的地、贸易条款、期望时效以及是否需要清关和派送。"],
       ["是否支持清关和门到门？", "可以。我们可根据贸易条款和目的地要求，组合报关清关、仓储中转、卡车派送和回单反馈。"],
@@ -223,6 +233,9 @@ const content = {
       "告诉我们货物类型、起运港、目的港和贸易条款，我们会为你梳理合适的航线、仓储、清关与交付方案。",
     primaryCta: "发送需求",
     secondaryCta: "查看服务",
+    contactKicker: "立即咨询",
+    menuLabel: "打开或关闭导航菜单",
+    languageSwitchLabel: "切换语言",
     contact: {
       title: "联系上海隽昊",
       desc:
@@ -252,15 +265,18 @@ const content = {
     langLabel: "English",
     nav: ["Home", "Services", "Network", "Process", "Advantages", "Contact"],
     quote: "Get a Quote",
-    brand: "上海隽昊",
+    brand: "Shanghai Junhao",
     brandFull: "Shanghai Eastern Worldwide Logistics Co., Ltd.",
+    brandSub: "U.S.-China trade and global logistics partner",
     englishName: "Shanghai Eastern Worldwide Logistics Co., Ltd.",
+    heroImageAlt: "Container vessel moving through a digital global route network",
     eyebrow: "U.S.-to-China export logistics and global freight forwarding",
     headline: "Global routes, sharper trade.",
     subhead:
       "We help importers, exporters and trading companies move cargo with sea freight, air freight, customs clearance, warehousing and door-to-door delivery. Our team connects carrier capacity, overseas agents and local clearance resources to improve cost control and delivery certainty.",
     heroPoints: ["Safe & efficient", "Precise & convenient", "Visible end to end", "Door-to-door delivery"],
     trackingTitle: "Quick Inquiry / Operations Entry",
+    trackingBadge: "Track your shipment",
     trackingHint: "Enter B/L, container or order number",
     trackingButton: "Check Status",
     trackingMore: "Contact operations for milestones",
@@ -276,12 +292,13 @@ const content = {
     statsNote:
       "Figures summarize historical service capability. Actual pricing, timing and delivery arrangements depend on route, customs inspection, port congestion and final-mile conditions.",
     quickServices: [
-      ["Sea Freight", "海运服务", "sea", "sea"],
-      ["Air Freight", "空运服务", "air", "sea"],
-      ["Warehousing", "仓储配送", "warehouse", "warehouse"],
-      ["Customs Clearance", "报关清关", "customs", "customs"],
-      ["Door-to-Door", "门到门服务", "truck", "door"],
+      ["Sea Freight", "FCL / LCL", "sea", "sea"],
+      ["Air Freight", "Urgent / Samples", "air", "sea"],
+      ["Warehousing", "Storage / Distribution", "warehouse", "warehouse"],
+      ["Customs Clearance", "Declaration / Inspection", "customs", "customs"],
+      ["Door-to-Door", "Pickup / Delivery", "truck", "door"],
     ],
+    quickServicesLabel: "Service shortcuts",
     processTitle: "How We Operate",
     processKicker: "OPERATING RHYTHM",
     process: [
@@ -300,7 +317,7 @@ const content = {
       {
         key: "sea",
         title: "Sea & Air Freight Forwarding",
-        en: "海运与空运货代",
+        en: "FCL / LCL / Air",
         icon: "sea",
         desc:
           "For e-commerce replenishment, traditional trade, factory exports and project cargo, we match FCL, LCL, air freight, breakbulk and reefer options to cargo volume, budget and timing.",
@@ -313,7 +330,7 @@ const content = {
       {
         key: "customs",
         title: "Customs Clearance & Commodity Inspection",
-        en: "报关清关与商检",
+        en: "Customs / Inspection / Documents",
         icon: "customs",
         desc:
           "Customs specialists support import and export declaration, inspection, phytosanitary steps, fumigation and verification document return to reduce delay at clearance nodes.",
@@ -326,7 +343,7 @@ const content = {
       {
         key: "warehouse",
         title: "Warehousing & Distribution",
-        en: "仓储与配送",
+        en: "Storage / Distribution / Delivery",
         icon: "warehouse",
         desc:
           "Port yards, rail stations and warehouse nodes support receiving, unloading, short-haul transfer, sorting, packing, strapping, palletizing, batch release and truck dispatch.",
@@ -339,7 +356,7 @@ const content = {
       {
         key: "door",
         title: "Door-to-Door Delivery",
-        en: "门到门配送",
+        en: "Pickup / Clearance / Delivery",
         icon: "truck",
         desc:
           "From U.S. pickup and export handling to international transport, destination customs and delivery in China, we connect multiple legs into one coordinated path.",
@@ -352,7 +369,7 @@ const content = {
       {
         key: "network",
         title: "U.S. Agent Network",
-        en: "美国代理网络",
+        en: "U.S. gateways / Overseas agents",
         icon: "network",
         desc:
           "U.S. port and overseas agent resources cover pickup, warehouse transfer, export documentation, sea and air booking, destination clearance and delivery coordination.",
@@ -365,7 +382,7 @@ const content = {
       {
         key: "project",
         title: "Project, Breakbulk & Bulk Cargo",
-        en: "项目与散杂货物流",
+        en: "Oversized / Breakbulk / Project cargo",
         icon: "package",
         desc:
           "For machinery, steel products, bagged goods, self-owned containers, oversized cargo and multi-node engineering freight, we plan loading, port receiving and land transport handoffs.",
@@ -380,10 +397,13 @@ const content = {
     networkKicker: "GLOBAL COVERAGE",
     networkLead:
       "Long-term overseas partnerships connect key U.S. gateways, core China ports and regional agents into an executable transport, clearance, warehousing and delivery network.",
+    mapLabel: "Key port network",
     portGroups: [
       ["Major U.S. Gateways", ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah"]],
       ["Core China Ports", ["Shanghai", "Ningbo", "Qingdao", "Shenzhen", "Xiamen"]],
     ],
+    routeLegend: ["U.S. gateways", "China ports"],
+    mapDots: ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah", "Shanghai", "Ningbo", "Qingdao"],
     regions: [
       ["North America", "Major port agents, trucking, warehousing and transfer support"],
       ["Central & South America", "Route agency and destination coordination"],
@@ -393,6 +413,7 @@ const content = {
       ["Australia", "Port agency and final-mile delivery coordination"],
     ],
     advantageTitle: "Why Shanghai Junhao",
+    advantageKicker: "WHY US",
     advantages: [
       ["U.S.-China Route Experience", "Familiar with U.S. gateways, China import clearance and final-mile delivery flows."],
       ["Multimodal Integration", "Combine sea freight, air freight, trucking, warehousing, customs and cargo insurance."],
@@ -400,6 +421,7 @@ const content = {
       ["Cost-Time Balance", "Match transport plans to cargo volume, category and delivery cycle."],
     ],
     aboutTitle: "Company Profile",
+    aboutKicker: "COMPANY PROFILE",
     about:
       "Shanghai Eastern Worldwide Logistics Co., Ltd. is an international logistics provider serving U.S.-China trade and global supply chain scenarios. The company connects sea and air freight, warehousing, customs clearance, commodity inspection, trucking, cargo insurance and multimodal transport services for exporters, importers and trading companies.",
     scenariosTitle: "Service Scenarios",
@@ -425,6 +447,9 @@ const content = {
       "Share cargo type, origin, destination and trade terms. We will map the right route, warehouse, customs and delivery solution.",
     primaryCta: "Send Requirement",
     secondaryCta: "View Services",
+    contactKicker: "LET'S MOVE",
+    menuLabel: "Toggle navigation",
+    languageSwitchLabel: "Toggle language",
     contact: {
       title: "Contact Shanghai Junhao",
       desc:
@@ -553,13 +578,13 @@ function RouteField() {
   return <canvas ref={canvasRef} className="route-field" aria-hidden="true" />;
 }
 
-function BrandLockup({ compact = false }) {
+function BrandLockup({ t, compact = false }) {
   return (
-    <a className={`brand-lockup ${compact ? "compact" : ""}`} href="#home" aria-label="上海隽昊 home">
+    <a className={`brand-lockup ${compact ? "compact" : ""}`} href="#home" aria-label={t.brandFull}>
       <img src={logoMark} alt="" />
       <span>
-        <strong>上海隽昊</strong>
-        <small>Shanghai Eastern Worldwide Logistics</small>
+        <strong>{t.brand}</strong>
+        <small>{t.brandSub}</small>
       </span>
     </a>
   );
@@ -588,8 +613,8 @@ function Header({ lang, setLang, t }) {
 
   return (
     <header className="site-header">
-      <BrandLockup />
-      <button className="menu-button icon-button" onClick={() => setOpen((value) => !value)} aria-label="Toggle navigation">
+      <BrandLockup t={t} />
+      <button className="menu-button icon-button" onClick={() => setOpen((value) => !value)} aria-label={t.menuLabel}>
         {open ? <X size={22} /> : <Menu size={22} />}
       </button>
       <nav className={open ? "open" : ""}>
@@ -603,7 +628,7 @@ function Header({ lang, setLang, t }) {
         <button
           className="language-toggle"
           onClick={() => setLang(lang === "zh" ? "en" : "zh")}
-          aria-label="Toggle language"
+          aria-label={t.languageSwitchLabel}
         >
           <Languages size={17} />
           <span>{lang === "zh" ? "EN" : "中文"}</span>
@@ -628,7 +653,7 @@ function Hero({ t, setActiveService }) {
 
   return (
     <section id="home" className="hero">
-      <img className="hero-image" src={heroImage} alt="Container vessel moving through a digital global route network" />
+      <img className="hero-image" src={heroImage} alt={t.heroImageAlt} />
       <RouteField />
       <div className="hero-shade" />
       <div className="hero-grid">
@@ -666,7 +691,7 @@ function Hero({ t, setActiveService }) {
         <div className="hero-panel" aria-label={t.trackingTitle}>
           <div className="panel-heading">
             <span>{t.trackingTitle}</span>
-            <small>TRACK YOUR SHIPMENT</small>
+            <small>{t.trackingBadge}</small>
           </div>
           <form className="tracking-form" onSubmit={submitTracking}>
             <label>
@@ -690,7 +715,7 @@ function Hero({ t, setActiveService }) {
         </div>
       </div>
 
-      <div className="quick-dock" aria-label="Service shortcuts">
+      <div className="quick-dock" aria-label={t.quickServicesLabel}>
         {t.quickServices.map(([title, subtitle, icon, serviceKey]) => (
           <a
             href="#services"
@@ -711,7 +736,7 @@ function Hero({ t, setActiveService }) {
 
 function Stats({ t }) {
   return (
-    <section className="stats-band" aria-label="Company metrics">
+    <section className="stats-band" aria-label={t.statsLabel}>
       <div className="stats-grid">
         {t.stats.map(([value, label, sub]) => (
           <div key={label}>
@@ -818,7 +843,7 @@ function NetworkSection({ t }) {
     <section id="network" className="network-section">
       <div className="network-visual">
         <div className="map-panel">
-          <div className="map-grid" aria-label="重点港口网络">
+          <div className="map-grid" aria-label={t.mapLabel}>
             {t.portGroups.map(([title, ports]) => (
               <div key={title} className="port-group">
                 <h3>{title}</h3>
@@ -831,11 +856,11 @@ function NetworkSection({ t }) {
             ))}
           </div>
           <div className="route-legend">
-            <span>U.S. gateways</span>
+            <span>{t.routeLegend[0]}</span>
             <strong />
-            <span>China ports</span>
+            <span>{t.routeLegend[1]}</span>
           </div>
-          {["Los Angeles", "Long Beach", "New York", "Houston", "Savannah", "Shanghai", "Ningbo", "Qingdao"].map((port, index) => (
+          {t.mapDots.map((port, index) => (
             <i key={port} style={{ "--index": index }} aria-hidden="true" />
           ))}
         </div>
@@ -901,13 +926,13 @@ function Advantages({ t }) {
   return (
     <section id="advantages" className="section advantages-section">
       <div className="about-block">
-        <p>COMPANY PROFILE</p>
+        <p>{t.aboutKicker}</p>
         <h2>{t.aboutTitle}</h2>
         <span>{t.about}</span>
       </div>
       <div>
         <div className="section-heading compact-heading">
-          <p>WHY US</p>
+          <p>{t.advantageKicker}</p>
           <h2>{t.advantageTitle}</h2>
         </div>
         <div className="advantage-grid">
@@ -935,7 +960,7 @@ function Contact({ t }) {
   return (
     <section id="contact" className="contact-section">
       <div className="contact-copy">
-        <p>LET'S MOVE</p>
+        <p>{t.contactKicker}</p>
         <h2>{t.ctaTitle}</h2>
         <span>{t.ctaText}</span>
         <div className="contact-cards">
@@ -998,7 +1023,7 @@ export function App() {
         <Contact t={t} />
       </main>
       <footer className="footer">
-        <BrandLockup compact />
+        <BrandLockup t={t} compact />
         <span>{t.footer}</span>
       </footer>
     </>
