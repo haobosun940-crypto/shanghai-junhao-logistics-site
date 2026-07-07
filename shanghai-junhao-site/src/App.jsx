@@ -14,6 +14,7 @@ import {
   Menu,
   Network,
   PackageCheck,
+  PhoneCall,
   Plane,
   Radar,
   Route,
@@ -55,42 +56,44 @@ const content = {
     eyebrow: "中美贸易物流与全球货运代理伙伴",
     headline: "连接全球，驱动贸易。",
     subhead:
-      "专注美国出口至中国及全球货运代理，为客户提供海运、空运、仓储、清关、商检、陆运、保险与多式联运的一体化物流解决方案。",
+      "为中美进出口企业提供海运、空运、清关、仓储与门到门配送服务。我们整合航线、海外代理和本地清关资源，帮助客户降低运输成本、提升交付确定性。",
     heroPoints: ["安全高效", "精准便捷", "全程可视", "门到门交付"],
-    trackingTitle: "货物追踪",
+    trackingTitle: "快速查询 / 业务入口",
     trackingHint: "输入提单号 / 集装箱号 / 订单号",
-    trackingButton: "追踪货物",
-    trackingMore: "更多追踪方式",
+    trackingButton: "查询状态",
+    trackingMore: "联系业务获取节点",
     trackingResult:
-      "模拟状态：已接收查询。正式上线后可接入承运人、仓库或内部系统的实时节点。",
+      "追踪系统正在接入中。请联系业务人员获取最新货物节点，我们会按订舱、提柜、报关、出运和签收状态反馈。",
     stats: [
       ["10+", "行业经验", "Years of Experience"],
       ["1000+", "服务客户", "Global Clients"],
       ["50+", "服务国家和地区", "Countries & Regions"],
       ["20K+", "年出运量(TEU)", "Annual Shipments"],
-      ["99.2%", "准时交付率", "On-time Delivery"],
+      ["稳定交付", "关键节点反馈", "Reliable Delivery"],
     ],
+    statsNote:
+      "数据用于展示公司历史服务能力，具体价格、时效与交付安排会受航线、海关查验、港口拥堵和目的地派送条件影响。",
     quickServices: [
-      ["海运服务", "Sea Freight", "sea"],
-      ["空运服务", "Air Freight", "air"],
-      ["仓储配送", "Warehousing", "warehouse"],
-      ["报关清关", "Customs Clearance", "customs"],
-      ["门到门服务", "Door-to-Door", "truck"],
+      ["海运服务", "Sea Freight", "sea", "sea"],
+      ["空运服务", "Air Freight", "air", "sea"],
+      ["仓储配送", "Warehousing", "warehouse", "warehouse"],
+      ["报关清关", "Customs Clearance", "customs", "customs"],
+      ["门到门服务", "Door-to-Door", "truck", "door"],
     ],
     processTitle: "我们的操作流程",
     processKicker: "HOW WE OPERATE",
     process: [
-      ["咨询询价", "确认货物、贸易条款、时效与目的地要求。"],
-      ["方案与订舱", "匹配航线、舱位、空运或多式联运方案。"],
-      ["单证制作", "处理出口文件、提单、保险及所需合规资料。"],
-      ["报关清关", "协调海关、码头、场站与商检节点。"],
-      ["装运出运", "现场监装、集港、起运并同步运输状态。"],
-      ["交付签收", "协调海外代理、末端派送与回单反馈。"],
+      ["咨询询价", "确认货物类型、起运港、目的港、贸易条款与时效要求。"],
+      ["方案订舱", "比较船期、航线和舱位，匹配成本与交付周期。"],
+      ["单证制作", "准备提单、箱单、发票、保险及出口合规资料。"],
+      ["报关清关", "联动海关、场站、码头和商检节点处理通关。"],
+      ["装运出运", "跟进提柜、装箱、进港、起运和中转节点。"],
+      ["交付签收", "协调海外代理、仓库、卡车派送与回单反馈。"],
     ],
     servicesTitle: "服务与解决方案",
     servicesKicker: "WHAT WE DELIVER",
     servicesLead:
-      "围绕客户出口链路，我们把航线、仓库、海关、场站、车队和海外代理连接成可执行的物流方案。",
+      "围绕“怎么运、怎么清关、怎么交付”，我们把航线、仓库、海关、场站、车队和海外代理连接成可执行的物流方案。",
     services: [
       {
         key: "sea",
@@ -98,50 +101,11 @@ const content = {
         en: "Sea & Air Freight Forwarding",
         icon: "sea",
         desc:
-          "与主要船公司、航空公司及关键港口保持稳定合作，承接整箱、拼箱、散杂货、冷藏箱及各类空运货物。",
+          "适用于跨境电商、传统贸易、工厂出口和项目货运输送需求。我们根据货量、时效和预算，为客户匹配整柜、拼箱、空运、散杂货及冷藏运输方案。",
         bullets: [
-          "提供准确船期、航班、订舱与出运计划",
-          "处理出口单证、提单、保险与货物跟踪",
-          "协调提货、装箱、清关、拆箱与门点派送",
-        ],
-      },
-      {
-        key: "bulk",
-        title: "散杂货与大宗货物",
-        en: "Breakbulk & Bulk Cargo",
-        icon: "bulk",
-        desc:
-          "面向袋装货、机械设备、钢材、自备箱及普通散杂货，提供船东资源、港口接货、地面运输与现场支持。",
-        bullets: [
-          "长期合作散杂货船东，覆盖优势航线",
-          "专业技术团队制定装载与港口衔接方案",
-          "适合非标准尺寸、重货与工程类货物",
-        ],
-      },
-      {
-        key: "network",
-        title: "美国代理网络",
-        en: "U.S. Agent Network",
-        icon: "network",
-        desc:
-          "在美国拥有广泛代理资源，提供海运、空运、清关与末端派送服务，帮助美国客户高效出口至中国及全球市场。",
-        bullets: [
-          "覆盖北美、南美、欧洲、中东、东南亚和澳洲代理网络",
-          "支持 FOB、EXW、DDU、DDP 等贸易条款",
-          "连接 MAERSK、MATSON、PIL、Hapag-Lloyd 等承运资源",
-        ],
-      },
-      {
-        key: "warehouse",
-        title: "仓储与配送",
-        en: "Warehousing & Distribution",
-        icon: "warehouse",
-        desc:
-          "合作多个港口场站，提供铁路站提货、卸货、仓储、分拣、包装、打托、打带与分批配送。",
-        bullets: [
-          "按货物属性优化装箱方案，提高箱容利用率",
-          "现场监装确保配载准确、安全、可追溯",
-          "多吨位集卡车队灵活调度，降低运输成本",
+          "比较不同船期、航司和路线，平衡成本与时效",
+          "协助订舱、提货、装箱、报关、保险和货物跟踪",
+          "对接海外代理、港口、仓库和末端派送资源",
         ],
       },
       {
@@ -150,49 +114,110 @@ const content = {
         en: "Customs Clearance & Commodity Inspection",
         icon: "customs",
         desc:
-          "高素质报关团队负责进出口报关、法检、植检、木箱熏蒸等手续，保证通关高效、准确、合规。",
+          "面向进出口企业处理报关、商检、法检、植检、木箱熏蒸和核销资料回传，降低货物在通关节点的等待和沟通成本。",
         bullets: [
-          "进出口报关与核销单据及时回传",
-          "进口商检、法检、植检与木质包装熏蒸",
-          "实时联动海关、场站和码头处理异常",
+          "提前核对品名、HS 编码、单证和监管条件",
+          "联动海关、码头、场站和商检单位处理异常节点",
+          "适用于一般贸易、样品、设备、木包装及法检货物",
+        ],
+      },
+      {
+        key: "warehouse",
+        title: "仓储与配送",
+        en: "Warehousing & Distribution",
+        icon: "warehouse",
+        desc:
+          "围绕港口场站、铁路站点和仓库节点，提供收货、卸货、短驳、分拣、打托、打带、分批出库和集卡调度服务。",
+        bullets: [
+          "按货物属性优化装箱方案，提高箱容利用率",
+          "现场监装确保配载准确、安全、可追溯",
+          "多吨位集卡车队灵活调度，降低转运成本",
+        ],
+      },
+      {
+        key: "door",
+        title: "门到门配送",
+        en: "Door-to-Door Delivery",
+        icon: "truck",
+        desc:
+          "从美国提货、出口操作、国际运输、目的港清关到中国境内派送，整合多个环节为客户减少重复沟通。",
+        bullets: [
+          "支持 EXW、FOB、DDU、DDP 等常见贸易条款",
+          "根据目的地、品类和交付周期匹配卡车与仓配资源",
+          "适合需要一站式报价和节点反馈的中小批量货物",
+        ],
+      },
+      {
+        key: "network",
+        title: "美国代理网络",
+        en: "U.S. Agent Network",
+        icon: "network",
+        desc:
+          "依托美国主要港口和海外代理资源，覆盖提货、仓储中转、出口文件、海空运订舱、目的港清关和末端派送协作。",
+        bullets: [
+          "覆盖 Los Angeles、Long Beach、New York、Houston、Savannah 等主要口岸",
+          "支持北美到中国及其他区域的整柜、拼箱与空运方案",
+          "连接 MAERSK、MATSON、PIL、Hapag-Lloyd 等承运资源",
         ],
       },
       {
         key: "project",
-        title: "定制化项目物流",
-        en: "Customized Project Logistics",
+        title: "项目与散杂货物流",
+        en: "Project, Breakbulk & Bulk Cargo",
         icon: "package",
         desc:
-          "依托码头、仓库与重型陆运车队资源，为复杂项目货物制定合理、精准、节省成本的执行方案。",
+          "面向机械设备、钢材、袋装货、自备箱、大件重货和多节点工程类货物，制定装载、港口接货和陆运衔接方案。",
         bullets: [
-          "适合大件、重件、工程设备与多节点联运",
+          "长期合作散杂货船东与专业重型陆运资源",
           "响应迅速的项目操作团队负责全程协调",
-          "从运输路线到装卸计划均可按项目定制",
+          "从运输路线、装卸计划到场站衔接均可按项目定制",
         ],
       },
     ],
     networkTitle: "全球代理网络",
     networkKicker: "GLOBAL COVERAGE",
     networkLead:
-      "我们与海外代理建立长期合作，形成覆盖北美、中南美、欧洲、中东及印巴、东南亚、澳洲等区域的服务网络。",
+      "我们与海外代理建立长期合作，围绕美国主要口岸、中国核心港口和重点区域代理，形成可执行的跨境运输、清关、仓储与派送协作网络。",
+    portGroups: [
+      ["美国主要港口", ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah"]],
+      ["中国主要港口", ["Shanghai", "Ningbo", "Qingdao", "Shenzhen", "Xiamen"]],
+    ],
     regions: [
-      "North America",
-      "Central & South America",
-      "Europe",
-      "Middle East & Indian Subcontinent",
-      "Southeast Asia",
-      "Australia",
+      ["North America", "美国主要港口代理、卡车派送、仓储中转"],
+      ["Central & South America", "中南美航线代理与目的港协作"],
+      ["Europe", "欧线海运、清关资料和转运协同"],
+      ["Middle East & Indian Subcontinent", "中东及印巴航线衔接与项目货支持"],
+      ["Southeast Asia", "东南亚支线、转运与区域配送"],
+      ["Australia", "澳洲港口代理和门点派送协作"],
     ],
     advantageTitle: "为什么选择上海隽昊",
     advantages: [
-      ["客户为中心", "以客户选择为使命，以客户成功作为服务标准。"],
-      ["专业团队", "多年行业探索与实战经验，熟悉港口、场站、海关与海外代理协同。"],
-      ["实时反馈", "对承运货物提供运输状态跟踪，及时处理出口链路中的突发情况。"],
-      ["降本增效", "通过航线、箱型、仓储和车队调度优化，帮助客户降低综合物流成本。"],
+      ["中美链路经验", "熟悉美国主要港口、中国进口清关与末端派送流程。"],
+      ["多式联运整合", "整合海运、空运、卡车、仓储、清关和保险资源。"],
+      ["过程可追踪", "从订舱、提柜、报关到签收，提供关键节点反馈。"],
+      ["成本与时效平衡", "根据货量、品类和交付周期，匹配更合适的运输方案。"],
     ],
     aboutTitle: "公司简介",
     about:
-      "上海隽昊国际货运代理有限公司是一家国际物流公司，核心业务覆盖国际海空运代理、仓储、清关、商检、汽运与铁路运输、货物保险以及多式联运服务。公司秉持诚信经营和客户为中心的理念，依托专业团队和稳健资源，为客户创造安全、高效、精准、便捷的物流体验。",
+      "上海隽昊国际货运代理有限公司是一家面向中美贸易和全球供应链的国际物流服务商，对外英文名称为 Shanghai Eastern Worldwide Logistics Co., Ltd.。公司围绕美国出口、中国进口及全球货运代理场景，提供海空运、仓储、清关、商检、陆运、保险及多式联运服务。",
+    scenariosTitle: "典型服务场景",
+    scenariosKicker: "SERVICE SCENARIOS",
+    scenariosLead:
+      "把服务从“能做什么”落到真实业务场景，客户可以更快判断适合自己的运输路径。",
+    scenarios: [
+      ["洛杉矶至上海整柜运输", "适合工厂出口、贸易订单和稳定批量货物，重点平衡船期、箱型、清关与交付节点。", "sea"],
+      ["跨境电商小批量空运", "适合时效敏感、小批量补货或样品运输，重点控制航班、清关资料和末端派送。", "air"],
+      ["散杂货与项目设备", "适合机械设备、钢材、大件重货和非标准包装，重点处理装载、加固和港口衔接。", "package"],
+      ["门到门清关派送", "适合希望减少多方沟通的客户，从海外提货到国内签收提供整段方案。", "truck"],
+    ],
+    faqTitle: "常见问题",
+    faqKicker: "FAQ",
+    faq: [
+      ["报价需要哪些信息？", "通常需要货物品名、件数、重量体积、起运地、目的地、贸易条款、期望时效以及是否需要清关和派送。"],
+      ["是否支持清关和门到门？", "可以。我们可根据贸易条款和目的地要求，组合报关清关、仓储中转、卡车派送和回单反馈。"],
+      ["海运和空运怎么选择？", "海运更适合大批量和成本敏感货物，空运更适合时效敏感、小批量或紧急补货。实际方案会结合预算、时效和品类判断。"],
+      ["能处理大件或项目货吗？", "可以先评估尺寸、重量、包装和装卸条件，再匹配散杂货船东、重型陆运和港口接货资源。"],
+    ],
     ctaTitle: "让下一票货物更顺畅地出发",
     ctaText:
       "告诉我们货物类型、起运港、目的港和贸易条款，我们会为你梳理合适的航线、仓储、清关与交付方案。",
@@ -201,17 +226,24 @@ const content = {
     contact: {
       title: "联系上海隽昊",
       desc:
-        "网站上线后可在这里接入企业邮箱、电话、WhatsApp、微信二维码或在线表单。",
-      email: "sales@junhao-logistics.example",
-      phone: "+86 21 0000 0000",
-      address: "Shanghai, China",
+        "真实邮箱、电话、地址和二维码待补充。当前表单用于展示正式报价入口需要收集的信息结构。",
+      channels: [
+        ["企业邮箱", "待补充企业邮箱", "mail"],
+        ["业务电话 / 微信", "待补充业务联系方式", "phone"],
+        ["办公区域", "上海 / 具体地址待补充", "address"],
+      ],
     },
     form: {
       name: "姓名 / 公司",
-      email: "邮箱",
-      cargo: "货物与路线",
+      contact: "联系方式",
+      route: "起运地 → 目的地",
+      cargo: "货物类型 / 重量 / 体积",
+      service: "期望服务：海运 / 空运 / 清关 / 仓储 / 门到门",
+      timing: "期望时效",
       message: "补充需求",
       submit: "提交询价",
+      sent: "已提交",
+      received: "已收到询价，我们将在 1 个工作日内联系您。",
     },
     footer:
       "上海隽昊国际货运代理有限公司是您值得信赖的全球网络航运伙伴。",
@@ -226,42 +258,44 @@ const content = {
     eyebrow: "U.S.-to-China export logistics and global freight forwarding",
     headline: "Global routes, sharper trade.",
     subhead:
-      "We support U.S. exporters and global shippers with integrated sea freight, air freight, warehousing, customs clearance, inspection, trucking, cargo insurance and multimodal transport solutions.",
+      "We help importers, exporters and trading companies move cargo with sea freight, air freight, customs clearance, warehousing and door-to-door delivery. Our team connects carrier capacity, overseas agents and local clearance resources to improve cost control and delivery certainty.",
     heroPoints: ["Safe & efficient", "Precise & convenient", "Visible end to end", "Door-to-door delivery"],
-    trackingTitle: "Shipment Tracking",
+    trackingTitle: "Quick Inquiry / Operations Entry",
     trackingHint: "Enter B/L, container or order number",
-    trackingButton: "Track",
-    trackingMore: "More tracking options",
+    trackingButton: "Check Status",
+    trackingMore: "Contact operations for milestones",
     trackingResult:
-      "Demo status: request received. A production site can connect carrier, warehouse or internal milestone data.",
+      "Tracking integration is in progress. Please contact the operations team for the latest milestone updates across booking, pickup, customs, departure and delivery.",
     stats: [
       ["10+", "Years of Experience", "Industry experience"],
       ["1000+", "Global Clients", "Client relationships"],
       ["50+", "Countries & Regions", "Service coverage"],
       ["20K+", "Annual Shipments", "TEU handled"],
-      ["99.2%", "On-time Delivery", "Operational reliability"],
+      ["Reliable", "Milestone Updates", "Delivery coordination"],
     ],
+    statsNote:
+      "Figures summarize historical service capability. Actual pricing, timing and delivery arrangements depend on route, customs inspection, port congestion and final-mile conditions.",
     quickServices: [
-      ["Sea Freight", "海运服务", "sea"],
-      ["Air Freight", "空运服务", "air"],
-      ["Warehousing", "仓储配送", "warehouse"],
-      ["Customs Clearance", "报关清关", "customs"],
-      ["Door-to-Door", "门到门服务", "truck"],
+      ["Sea Freight", "海运服务", "sea", "sea"],
+      ["Air Freight", "空运服务", "air", "sea"],
+      ["Warehousing", "仓储配送", "warehouse", "warehouse"],
+      ["Customs Clearance", "报关清关", "customs", "customs"],
+      ["Door-to-Door", "门到门服务", "truck", "door"],
     ],
     processTitle: "How We Operate",
     processKicker: "OPERATING RHYTHM",
     process: [
-      ["Inquiry", "Confirm cargo profile, trade terms, timing and destination requirements."],
-      ["Routing & Booking", "Match sailing, air freight or multimodal options with available capacity."],
-      ["Documentation", "Prepare export documents, B/L, insurance and compliance materials."],
-      ["Customs Clearance", "Coordinate customs, container yards, terminals and inspection milestones."],
-      ["Dispatch", "Supervise loading, gate-in, departure and live shipment status updates."],
-      ["Delivery", "Coordinate overseas agents, final-mile delivery and proof-of-delivery feedback."],
+      ["Inquiry", "Confirm cargo type, origin, destination, trade terms and timing."],
+      ["Routing", "Compare schedules, routes and capacity to balance cost and delivery."],
+      ["Documentation", "Prepare B/L, packing list, invoice, insurance and export materials."],
+      ["Customs", "Coordinate customs, yards, terminals and inspection milestones."],
+      ["Dispatch", "Track pickup, loading, gate-in, departure and transfer nodes."],
+      ["Delivery", "Coordinate agents, warehouse handoff, trucking and proof of delivery."],
     ],
     servicesTitle: "Services & Solutions",
     servicesKicker: "WHAT WE DELIVER",
     servicesLead:
-      "We turn routes, warehouses, customs, terminals, trucking fleets and overseas agents into executable logistics plans.",
+      "We focus on the questions shippers ask first: how to move it, how to clear it, and how to deliver it with fewer handoff risks.",
     services: [
       {
         key: "sea",
@@ -269,50 +303,11 @@ const content = {
         en: "海运与空运货代",
         icon: "sea",
         desc:
-          "Stable cooperation with major shipping lines, airlines and key ports for FCL, LCL, bulk cargo, reefer containers and all kinds of air freight.",
+          "For e-commerce replenishment, traditional trade, factory exports and project cargo, we match FCL, LCL, air freight, breakbulk and reefer options to cargo volume, budget and timing.",
         bullets: [
-          "Accurate sailing schedules, flight options, booking and dispatch plans",
-          "Export documentation, B/L, cargo insurance and shipment tracking",
-          "Pickup, loading, customs clearance, devanning and door delivery",
-        ],
-      },
-      {
-        key: "bulk",
-        title: "Breakbulk & Bulk Cargo",
-        en: "散杂货与大宗货物",
-        icon: "bulk",
-        desc:
-          "Breakbulk ship-owner resources, port receiving, ground transportation and technical support for bagged goods, machinery, steel products and self-owned containers.",
-        bullets: [
-          "Long-term partnerships with breakbulk vessel owners",
-          "Professional loading plans and port coordination",
-          "Designed for non-standard, heavy and project cargo",
-        ],
-      },
-      {
-        key: "network",
-        title: "U.S. Agent Network",
-        en: "美国代理网络",
-        icon: "network",
-        desc:
-          "A broad U.S. agency network integrates sea freight, air freight, customs clearance and last-mile delivery for exporters shipping to China and beyond.",
-        bullets: [
-          "Agent coverage across North America, South America, Europe, Middle East, Southeast Asia and Australia",
-          "FOB, EXW, DDU and DDP logistics support",
-          "Carrier resources including MAERSK, MATSON, PIL and Hapag-Lloyd",
-        ],
-      },
-      {
-        key: "warehouse",
-        title: "Warehousing & Distribution",
-        en: "仓储与配送",
-        icon: "warehouse",
-        desc:
-          "Port container-yard cooperation for railway station pickup, unloading, storage, sorting, packaging, strapping, palletizing and batch distribution.",
-        bullets: [
-          "Optimized container loading layouts to improve space utilization",
-          "On-site loading supervision for safer and more accurate stowage",
-          "Flexible multi-tonnage container trucks to reduce delivery cost",
+          "Compare schedules, airlines and route options to balance cost and speed",
+          "Coordinate booking, pickup, loading, customs, insurance and cargo tracking",
+          "Connect overseas agents, ports, warehouses and final-mile delivery resources",
         ],
       },
       {
@@ -321,49 +316,110 @@ const content = {
         en: "报关清关与商检",
         icon: "customs",
         desc:
-          "Qualified customs specialists handle import and export formalities, statutory inspection, phytosanitary inspection and wooden container fumigation.",
+          "Customs specialists support import and export declaration, inspection, phytosanitary steps, fumigation and verification document return to reduce delay at clearance nodes.",
         bullets: [
-          "Efficient customs processing and prompt verification document return",
-          "Commodity inspection, statutory inspection and fumigation support",
-          "Real-time coordination with customs, yards and terminal operators",
+          "Review product name, HS code, documents and regulatory conditions early",
+          "Coordinate customs, terminal, container yard and inspection issues",
+          "Support general trade, samples, equipment, wooden packing and statutory inspection cargo",
+        ],
+      },
+      {
+        key: "warehouse",
+        title: "Warehousing & Distribution",
+        en: "仓储与配送",
+        icon: "warehouse",
+        desc:
+          "Port yards, rail stations and warehouse nodes support receiving, unloading, short-haul transfer, sorting, packing, strapping, palletizing, batch release and truck dispatch.",
+        bullets: [
+          "Optimize container loading layouts to improve utilization",
+          "Supervise loading for safer, traceable and more accurate stowage",
+          "Use flexible trucking resources to reduce transfer cost",
+        ],
+      },
+      {
+        key: "door",
+        title: "Door-to-Door Delivery",
+        en: "门到门配送",
+        icon: "truck",
+        desc:
+          "From U.S. pickup and export handling to international transport, destination customs and delivery in China, we connect multiple legs into one coordinated path.",
+        bullets: [
+          "Support common trade terms including EXW, FOB, DDU and DDP",
+          "Match trucking and warehouse resources by destination, cargo type and timing",
+          "Useful for shippers who need one quote and clear milestone communication",
+        ],
+      },
+      {
+        key: "network",
+        title: "U.S. Agent Network",
+        en: "美国代理网络",
+        icon: "network",
+        desc:
+          "U.S. port and overseas agent resources cover pickup, warehouse transfer, export documentation, sea and air booking, destination clearance and delivery coordination.",
+        bullets: [
+          "Cover major gateways such as Los Angeles, Long Beach, New York, Houston and Savannah",
+          "Support FCL, LCL and air freight options from North America to China and beyond",
+          "Coordinate carrier resources including MAERSK, MATSON, PIL and Hapag-Lloyd",
         ],
       },
       {
         key: "project",
-        title: "Customized Project Logistics",
-        en: "定制化项目物流",
+        title: "Project, Breakbulk & Bulk Cargo",
+        en: "项目与散杂货物流",
         icon: "package",
         desc:
-          "A responsive project team combines terminal, warehouse and heavy-duty land transport resources into precise, cost-saving logistics plans.",
+          "For machinery, steel products, bagged goods, self-owned containers, oversized cargo and multi-node engineering freight, we plan loading, port receiving and land transport handoffs.",
         bullets: [
-          "For oversized, heavy, engineering and multi-node transport projects",
-          "End-to-end coordination by experienced operations specialists",
-          "Tailored route, loading, unloading and dispatch planning",
+          "Long-term breakbulk vessel-owner and heavy-duty trucking resources",
+          "Responsive project operations team for end-to-end coordination",
+          "Tailored routing, loading, unloading and terminal handoff planning",
         ],
       },
     ],
     networkTitle: "Global Agency Network",
     networkKicker: "GLOBAL COVERAGE",
     networkLead:
-      "Long-term overseas agent partnerships create coverage across North America, Central and South America, Europe, the Middle East and Indian Subcontinent, Southeast Asia and Australia.",
+      "Long-term overseas partnerships connect key U.S. gateways, core China ports and regional agents into an executable transport, clearance, warehousing and delivery network.",
+    portGroups: [
+      ["Major U.S. Gateways", ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah"]],
+      ["Core China Ports", ["Shanghai", "Ningbo", "Qingdao", "Shenzhen", "Xiamen"]],
+    ],
     regions: [
-      "North America",
-      "Central & South America",
-      "Europe",
-      "Middle East & Indian Subcontinent",
-      "Southeast Asia",
-      "Australia",
+      ["North America", "Major port agents, trucking, warehousing and transfer support"],
+      ["Central & South America", "Route agency and destination coordination"],
+      ["Europe", "Ocean freight, document and clearance collaboration"],
+      ["Middle East & Indian Subcontinent", "Route handoff and project cargo support"],
+      ["Southeast Asia", "Feeder routes, transshipment and regional delivery"],
+      ["Australia", "Port agency and final-mile delivery coordination"],
     ],
     advantageTitle: "Why Shanghai Junhao",
     advantages: [
-      ["Customer-centered", "We take clients' choices as our mission and clients' success as our service standard."],
-      ["Professional team", "Years of hands-on logistics experience across ports, yards, customs and overseas agency coordination."],
-      ["Real-time feedback", "Shipment status tracking and prompt coordination during unexpected export operation events."],
-      ["Cost efficiency", "Route, container, warehouse and fleet planning designed to lower total logistics cost."],
+      ["U.S.-China Route Experience", "Familiar with U.S. gateways, China import clearance and final-mile delivery flows."],
+      ["Multimodal Integration", "Combine sea freight, air freight, trucking, warehousing, customs and cargo insurance."],
+      ["Trackable Milestones", "Provide key updates from booking and pickup through customs clearance and delivery."],
+      ["Cost-Time Balance", "Match transport plans to cargo volume, category and delivery cycle."],
     ],
     aboutTitle: "Company Profile",
     about:
-      "Shanghai Eastern Worldwide Logistics Co., Ltd. is an international logistics company covering international sea and air freight forwarding, warehousing, customs clearance, commodity inspection, truck and railway transportation, cargo insurance and multimodal transport services. Built on integrity, customer focus and professional execution, we deliver safe, efficient, precise and convenient logistics experiences.",
+      "Shanghai Eastern Worldwide Logistics Co., Ltd. is an international logistics provider serving U.S.-China trade and global supply chain scenarios. The company connects sea and air freight, warehousing, customs clearance, commodity inspection, trucking, cargo insurance and multimodal transport services for exporters, importers and trading companies.",
+    scenariosTitle: "Service Scenarios",
+    scenariosKicker: "SERVICE SCENARIOS",
+    scenariosLead:
+      "These common shipping situations help customers quickly understand which path fits their cargo.",
+    scenarios: [
+      ["Los Angeles to Shanghai FCL", "For factory exports, trade orders and recurring cargo where schedule, container type, clearance and delivery nodes matter.", "sea"],
+      ["Small-Batch Air Freight", "For urgent replenishment, samples or high-value small cargo where flight choice, clearance documents and final-mile timing matter.", "air"],
+      ["Breakbulk & Project Equipment", "For machinery, steel, oversized cargo and non-standard packing that needs loading, securing and port coordination.", "package"],
+      ["Door-to-Door Clearance Delivery", "For customers who want fewer handoffs from overseas pickup through domestic delivery confirmation.", "truck"],
+    ],
+    faqTitle: "Frequently Asked Questions",
+    faqKicker: "FAQ",
+    faq: [
+      ["What information is needed for a quote?", "Cargo name, quantity, weight and volume, origin, destination, trade terms, timing expectation and whether clearance or delivery is required."],
+      ["Can you support clearance and door-to-door delivery?", "Yes. We can combine customs clearance, warehousing, trucking, delivery and proof-of-delivery feedback depending on the trade terms."],
+      ["Should I choose sea freight or air freight?", "Sea freight is usually better for larger or cost-sensitive cargo. Air freight is better for urgent, small-batch or time-sensitive shipments."],
+      ["Can you handle oversized or project cargo?", "Yes. We first evaluate dimensions, weight, packaging and loading conditions, then match breakbulk, heavy-duty trucking and port resources."],
+    ],
     ctaTitle: "Move the next shipment with more certainty",
     ctaText:
       "Share cargo type, origin, destination and trade terms. We will map the right route, warehouse, customs and delivery solution.",
@@ -372,17 +428,24 @@ const content = {
     contact: {
       title: "Contact Shanghai Junhao",
       desc:
-        "When the public site goes live, this area can connect company email, phone, WhatsApp, WeChat QR code or an online form.",
-      email: "sales@junhao-logistics.example",
-      phone: "+86 21 0000 0000",
-      address: "Shanghai, China",
+        "Official email, phone, address and QR/contact channels will be added later. The current form shows the information structure needed for a useful quotation.",
+      channels: [
+        ["Company Email", "To be added", "mail"],
+        ["Phone / WeChat", "To be added", "phone"],
+        ["Office Area", "Shanghai / address to be added", "address"],
+      ],
     },
     form: {
       name: "Name / Company",
-      email: "Email",
-      cargo: "Cargo & route",
+      contact: "Contact method",
+      route: "Origin → Destination",
+      cargo: "Cargo type / weight / volume",
+      service: "Expected service: sea / air / customs / warehousing / door-to-door",
+      timing: "Expected timing",
       message: "Additional needs",
       submit: "Submit Inquiry",
+      sent: "Submitted",
+      received: "Inquiry received. We will contact you within one business day.",
     },
     footer:
       "Shanghai Eastern Worldwide Logistics Co., Ltd. is your global network shipping partner.",
@@ -554,7 +617,7 @@ function Header({ lang, setLang, t }) {
   );
 }
 
-function Hero({ t }) {
+function Hero({ t, setActiveService }) {
   const [trackingValue, setTrackingValue] = useState("");
   const [trackingResult, setTrackingResult] = useState("");
 
@@ -628,8 +691,14 @@ function Hero({ t }) {
       </div>
 
       <div className="quick-dock" aria-label="Service shortcuts">
-        {t.quickServices.map(([title, subtitle, icon]) => (
-          <a href="#services" key={title}>
+        {t.quickServices.map(([title, subtitle, icon, serviceKey]) => (
+          <a
+            href="#services"
+            key={title}
+            onClick={() => {
+              setActiveService(serviceKey);
+            }}
+          >
             <IconByName name={icon} size={29} />
             <span>{title}</span>
             <small>{subtitle}</small>
@@ -643,13 +712,16 @@ function Hero({ t }) {
 function Stats({ t }) {
   return (
     <section className="stats-band" aria-label="Company metrics">
-      {t.stats.map(([value, label, sub]) => (
-        <div key={label}>
-          <strong>{value}</strong>
-          <span>{label}</span>
-          <small>{sub}</small>
-        </div>
-      ))}
+      <div className="stats-grid">
+        {t.stats.map(([value, label, sub]) => (
+          <div key={label}>
+            <strong>{value}</strong>
+            <span>{label}</span>
+            <small>{sub}</small>
+          </div>
+        ))}
+      </div>
+      <p>{t.statsNote}</p>
     </section>
   );
 }
@@ -682,16 +754,17 @@ function Process({ t }) {
   );
 }
 
-function Services({ t }) {
-  const [activeKey, setActiveKey] = useState(t.services[0].key);
+function Services({ t, activeKey, setActiveKey }) {
   const active = useMemo(
     () => t.services.find((service) => service.key === activeKey) || t.services[0],
     [activeKey, t.services],
   );
 
   useEffect(() => {
-    setActiveKey(t.services[0].key);
-  }, [t.services]);
+    if (!t.services.some((service) => service.key === activeKey)) {
+      setActiveKey(t.services[0].key);
+    }
+  }, [activeKey, setActiveKey, t.services]);
 
   return (
     <section id="services" className="section services-section">
@@ -743,12 +816,27 @@ function Services({ t }) {
 function NetworkSection({ t }) {
   return (
     <section id="network" className="network-section">
-      <div className="network-visual" aria-hidden="true">
+      <div className="network-visual">
         <div className="map-panel">
+          <div className="map-grid" aria-label="重点港口网络">
+            {t.portGroups.map(([title, ports]) => (
+              <div key={title} className="port-group">
+                <h3>{title}</h3>
+                <div>
+                  {ports.map((port) => (
+                    <span key={port}>{port}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="route-legend">
+            <span>U.S. gateways</span>
+            <strong />
+            <span>China ports</span>
+          </div>
           {["Los Angeles", "Long Beach", "New York", "Houston", "Savannah", "Shanghai", "Ningbo", "Qingdao"].map((port, index) => (
-            <span key={port} style={{ "--index": index }}>
-              {port}
-            </span>
+            <i key={port} style={{ "--index": index }} aria-hidden="true" />
           ))}
         </div>
       </div>
@@ -757,11 +845,51 @@ function NetworkSection({ t }) {
         <h2>{t.networkTitle}</h2>
         <span>{t.networkLead}</span>
         <div className="region-list">
-          {t.regions.map((region) => (
+          {t.regions.map(([region, desc]) => (
             <div key={region}>
               <MapPin size={17} />
-              {region}
+              <span>
+                <strong>{region}</strong>
+                <small>{desc}</small>
+              </span>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ScenariosAndFaq({ t }) {
+  return (
+    <section className="section scenarios-section">
+      <div className="section-heading wide">
+        <p>{t.scenariosKicker}</p>
+        <h2>{t.scenariosTitle}</h2>
+        <span>{t.scenariosLead}</span>
+      </div>
+      <div className="scenario-grid">
+        {t.scenarios.map(([title, desc, icon]) => (
+          <article key={title}>
+            <div className="scenario-icon">
+              <IconByName name={icon} size={25} />
+            </div>
+            <h3>{title}</h3>
+            <p>{desc}</p>
+          </article>
+        ))}
+      </div>
+      <div className="faq-panel">
+        <div className="section-heading compact-heading">
+          <p>{t.faqKicker}</p>
+          <h2>{t.faqTitle}</h2>
+        </div>
+        <div className="faq-list">
+          {t.faq.map(([question, answer]) => (
+            <details key={question}>
+              <summary>{question}</summary>
+              <p>{answer}</p>
+            </details>
           ))}
         </div>
       </div>
@@ -798,6 +926,11 @@ function Advantages({ t }) {
 
 function Contact({ t }) {
   const [sent, setSent] = useState(false);
+  const contactIcons = {
+    mail: Mail,
+    phone: PhoneCall,
+    address: MapPin,
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -806,18 +939,18 @@ function Contact({ t }) {
         <h2>{t.ctaTitle}</h2>
         <span>{t.ctaText}</span>
         <div className="contact-cards">
-          <a href={`mailto:${t.contact.email}`}>
-            <Mail size={19} />
-            {t.contact.email}
-          </a>
-          <a href={`tel:${t.contact.phone.replaceAll(" ", "")}`}>
-            <Ship size={19} />
-            {t.contact.phone}
-          </a>
-          <div>
-            <MapPin size={19} />
-            {t.contact.address}
-          </div>
+          {t.contact.channels.map(([label, value, icon]) => {
+            const ContactIcon = contactIcons[icon] || Mail;
+            return (
+              <div key={label}>
+                <ContactIcon size={19} />
+                <span>
+                  <strong>{label}</strong>
+                  <small>{value}</small>
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
       <form
@@ -830,12 +963,16 @@ function Contact({ t }) {
         <h3>{t.contact.title}</h3>
         <p>{t.contact.desc}</p>
         <input placeholder={t.form.name} />
-        <input type="email" placeholder={t.form.email} />
+        <input placeholder={t.form.contact} />
+        <input placeholder={t.form.route} />
         <input placeholder={t.form.cargo} />
+        <input placeholder={t.form.service} />
+        <input placeholder={t.form.timing} />
         <textarea placeholder={t.form.message} rows="4" />
+        {sent && <p className="form-success">{t.form.received}</p>}
         <button type="submit">
           {sent ? <CheckCircle2 size={18} /> : <Send size={18} />}
-          {sent ? "Received" : t.form.submit}
+          {sent ? t.form.sent : t.form.submit}
         </button>
       </form>
     </section>
@@ -844,18 +981,20 @@ function Contact({ t }) {
 
 export function App() {
   const [lang, setLang] = useState("zh");
+  const [activeService, setActiveService] = useState("sea");
   const t = content[lang];
 
   return (
     <>
       <Header lang={lang} setLang={setLang} t={t} />
       <main>
-        <Hero t={t} />
+        <Hero t={t} setActiveService={setActiveService} />
         <Stats t={t} />
         <Process t={t} />
-        <Services t={t} />
+        <Services t={t} activeKey={activeService} setActiveKey={setActiveService} />
         <NetworkSection t={t} />
         <Advantages t={t} />
+        <ScenariosAndFaq t={t} />
         <Contact t={t} />
       </main>
       <footer className="footer">
