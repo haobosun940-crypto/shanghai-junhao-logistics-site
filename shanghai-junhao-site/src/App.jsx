@@ -23,6 +23,7 @@ import {
   ShieldCheck,
   Ship,
   Truck,
+  UserRound,
   Warehouse,
   X,
 } from "lucide-react";
@@ -52,13 +53,13 @@ const content = {
     quote: "获取报价",
     brand: "上海隽昊",
     brandFull: "上海隽昊国际货运代理有限公司",
-    brandSub: "中美贸易与全球物流服务商",
+    brandSub: "国际货运代理与供应链服务商",
     englishName: "上海隽昊国际货运代理有限公司",
     heroImageAlt: "数字航线网络中的集装箱船",
     eyebrow: "中美贸易物流与全球货运代理伙伴",
     headline: "连接全球 驱动贸易",
     subhead:
-      "专注国际海运、空运、仓储、报关、商检、卡车运输、铁路运输、货物保险与多式联运服务。依托稳定的船公司、航空公司、港口仓储、海外代理和清关资源，为客户提供安全、高效、精准、便捷的一体化物流解决方案。",
+      "专注国际海运、空运、仓储、报关、商检、陆运、保险与多式联运。依托稳定承运资源、海外代理和清关网络，为客户提供安全、高效、精准的一体化物流方案。",
     heroPoints: ["承运资源", "海外代理", "全程节点", "多式联运"],
     trackingTitle: "货物状态咨询",
     trackingBadge: "业务人员协助查询",
@@ -188,19 +189,19 @@ const content = {
         title: "贸易条款支持",
         icon: "inspection",
         items: ["离岸价", "工厂交货", "未完税交货", "完税后交货"],
-        desc: "根据贸易条款衔接起运地提货、出口报关、国际运输、目的港清关与门点派送。",
+        desc: "根据常见贸易条款，衔接起运地提货、出口报关、国际运输、目的港清关与门点派送。",
       },
       {
         title: "承运与航线资源",
         icon: "sea",
         items: ["马士基", "美森", "太平船务", "赫伯罗特"],
-        desc: "与主要承运资源保持合作，为客户匹配更具竞争力的航线、舱位和价格方案。",
+        desc: "整合主要承运资源，为客户匹配更具竞争力的航线、舱位和价格方案。",
       },
       {
         title: "保险与多式联运",
         icon: "insurance",
         items: ["海运", "空运", "铁路", "卡车"],
-        desc: "可根据货物类型与路线协助办理运输保险，并组合多种运输方式降低跨境风险。",
+        desc: "按货物类型与路线协助办理运输保险，并组合多种运输方式降低跨境风险。",
       },
       {
         title: "全程节点反馈",
@@ -219,7 +220,15 @@ const content = {
       ["中国主要港口", ["上海", "宁波", "青岛", "深圳", "厦门"]],
     ],
     routeLegend: ["美国口岸", "中国港口"],
-    mapDots: ["洛杉矶", "长滩", "纽约", "休斯敦", "萨凡纳", "上海", "宁波", "青岛"],
+    networkCaption: "美国口岸 → 中国港口｜海运、清关、仓储、门点派送协同网络",
+    mapDots: [
+      ["洛杉矶", 18, 54],
+      ["长滩", 30, 62],
+      ["纽约", 42, 46],
+      ["上海", 68, 58],
+      ["宁波", 78, 50],
+      ["深圳", 86, 64],
+    ],
     regions: [
       ["北美", "美国主要港口代理、卡车派送、仓储中转"],
       ["中南美", "中南美航线代理与目的港协作"],
@@ -248,14 +257,14 @@ const content = {
     scenarios: [
       ["洛杉矶至上海整柜运输", "适合工厂出口、贸易订单和稳定批量货物，重点平衡船期、箱型、清关与交付节点。", "sea"],
       ["跨境电商小批量空运", "适合时效敏感、小批量补货或样品运输，重点控制航班、清关资料和末端派送。", "air"],
-      ["散杂货与项目设备", "适合机械设备、钢材、大件重货和非标准包装，重点处理装载、加固和港口衔接。", "package"],
+      ["散杂货与特殊货物", "适合冷藏箱、机械设备、钢材、大件重货和非标准包装，重点处理装载、加固和港口衔接。", "package"],
       ["门到门清关派送", "适合希望减少多方沟通的客户，从海外提货到国内签收提供整段方案。", "truck"],
     ],
     faqTitle: "常见问题",
     faqKicker: "常见问题",
     faq: [
-      ["报价需要哪些信息？", "通常需要货物品名、件数、重量体积、起运地、目的地、贸易条款、期望时效以及是否需要清关和派送。"],
-      ["支持哪些贸易条款？", "可根据离岸价、工厂交货、未完税交货、完税后交货等常见贸易条款，组合提货、清关、运输和派送。"],
+      ["报价需要哪些信息？", "通常需要起运地、目的地、货物品名、件数、重量、体积、包装方式、贸易条款、期望时效，以及是否需要清关、仓储、保险或门到门派送。"],
+      ["支持哪些贸易条款？", "可根据离岸价、工厂交货、未完税交货、完税后交货等常见贸易条款，提供起运地提货、出口报关、国际运输、目的港清关、仓储中转和门点派送。"],
       ["是否支持货物保险？", "可根据货物类型与运输路线协助办理货物运输保险，降低跨境运输过程中的风险。"],
       ["海运和空运怎么选择？", "海运更适合大批量和成本敏感货物，空运更适合时效敏感、小批量或紧急补货。实际方案会结合预算、时效和品类判断。"],
       ["能处理大件或项目货吗？", "可以先评估尺寸、重量、包装和装卸条件，再匹配散杂货船东、重型陆运和港口接货资源。"],
@@ -271,11 +280,11 @@ const content = {
     contact: {
       title: "联系上海隽昊",
       desc:
-        "真实邮箱、电话、地址和二维码待补充。当前表单用于展示正式报价入口需要收集的信息结构。",
+        "提交货物信息后，业务人员将根据起运地、目的地、货物类型、重量体积和期望服务，为您匹配合适的运输方案。",
       channels: [
-        ["企业邮箱", "待补充企业邮箱", "mail"],
-        ["业务电话 / 微信", "待补充业务联系方式", "phone"],
-        ["办公区域", "上海 / 具体地址待补充", "address"],
+        ["联系人", "鄂晶波", "person"],
+        ["业务电话 / 微信", "13916407700", "phone"],
+        ["办公区域", "上海", "address"],
       ],
     },
     form: {
@@ -299,13 +308,13 @@ const content = {
     quote: "Get a Quote",
     brand: "Shanghai Junhao",
     brandFull: "Shanghai Eastern Worldwide Logistics Co., Ltd.",
-    brandSub: "U.S.-China trade and global logistics partner",
+    brandSub: "Freight forwarding & supply chain services",
     englishName: "Shanghai Eastern Worldwide Logistics Co., Ltd.",
     heroImageAlt: "Container vessel moving through a digital global route network",
     eyebrow: "U.S.-to-China export logistics and global freight forwarding",
     headline: "Global routes, sharper trade.",
     subhead:
-      "We provide international sea freight, air freight, warehousing, customs clearance, commodity inspection, trucking, rail transport, cargo insurance and multimodal logistics. By connecting carriers, airlines, ports, warehouses, overseas agents and clearance resources, we help customers move cargo safely, efficiently and with clearer handoffs.",
+      "We provide international sea freight, air freight, warehousing, customs clearance, inspection, inland transport, insurance and multimodal logistics. Stable carrier resources, overseas agents and clearance networks help customers move cargo with safer, faster and more precise execution.",
     heroPoints: ["Carrier resources", "Overseas agents", "Milestone updates", "Multimodal transport"],
     trackingTitle: "Cargo Status Support",
     trackingBadge: "Operations-assisted inquiry",
@@ -434,19 +443,19 @@ const content = {
         title: "Trade Terms",
         icon: "inspection",
         items: ["FOB", "EXW", "DDU", "DDP"],
-        desc: "Connect origin pickup, export customs, international transport, destination clearance and door delivery according to trade terms.",
+        desc: "Connect origin pickup, export customs, international transport, destination clearance and door delivery under common trade terms.",
       },
       {
         title: "Carrier Resources",
         icon: "sea",
         items: ["MAERSK", "MATSON", "PIL", "Hapag-Lloyd"],
-        desc: "Coordinate major carrier resources to match competitive routes, capacity and pricing options.",
+        desc: "Combine major carrier resources to match competitive routes, capacity and pricing options.",
       },
       {
         title: "Insurance & Multimodal",
         icon: "insurance",
         items: ["Ocean", "Air", "Rail", "Truck"],
-        desc: "Arrange cargo insurance by commodity and route, and combine transport modes to reduce cross-border risk.",
+        desc: "Arrange cargo insurance by commodity and route while combining transport modes to reduce cross-border risk.",
       },
       {
         title: "Milestone Feedback",
@@ -465,7 +474,15 @@ const content = {
       ["Core China Ports", ["Shanghai", "Ningbo", "Qingdao", "Shenzhen", "Xiamen"]],
     ],
     routeLegend: ["U.S. gateways", "China ports"],
-    mapDots: ["Los Angeles", "Long Beach", "New York", "Houston", "Savannah", "Shanghai", "Ningbo", "Qingdao"],
+    networkCaption: "U.S. Ports → China Ports | Ocean, clearance, warehousing and door delivery network",
+    mapDots: [
+      ["Los Angeles", 18, 54],
+      ["Long Beach", 30, 62],
+      ["New York", 42, 46],
+      ["Shanghai", 68, 58],
+      ["Ningbo", 78, 50],
+      ["Shenzhen", 86, 64],
+    ],
     regions: [
       ["North America", "Major port agents, trucking, warehousing and transfer support"],
       ["Central & South America", "Route agency and destination coordination"],
@@ -494,14 +511,14 @@ const content = {
     scenarios: [
       ["Los Angeles to Shanghai FCL", "For factory exports, trade orders and recurring cargo where schedule, container type, clearance and delivery nodes matter.", "sea"],
       ["Small-Batch Air Freight", "For urgent replenishment, samples or high-value small cargo where flight choice, clearance documents and final-mile timing matter.", "air"],
-      ["Breakbulk & Project Equipment", "For machinery, steel, oversized cargo and non-standard packing that needs loading, securing and port coordination.", "package"],
+      ["Reefer & Special Cargo", "For reefer containers, machinery, steel, oversized cargo and non-standard packing that needs loading, securing and port coordination.", "package"],
       ["Door-to-Door Clearance Delivery", "For customers who want fewer handoffs from overseas pickup through domestic delivery confirmation.", "truck"],
     ],
     faqTitle: "Frequently Asked Questions",
     faqKicker: "FAQ",
     faq: [
-      ["What information is needed for a quote?", "Cargo name, quantity, weight and volume, origin, destination, trade terms, timing expectation and whether clearance or delivery is required."],
-      ["Which trade terms can you support?", "We can combine pickup, clearance, transport and delivery under common terms such as FOB, EXW, DDU and DDP."],
+      ["What information is needed for a quote?", "Origin, destination, cargo name, package count, weight, volume, packing method, trade terms, timing expectation, and whether clearance, warehousing, insurance or door delivery is required."],
+      ["Which trade terms can you support?", "We can provide origin pickup, export customs, international transport, destination clearance, warehousing transfer and door delivery under FOB, EXW, DDU and DDP."],
       ["Can you support cargo insurance?", "Yes. We can assist with cargo transport insurance based on commodity type and route to reduce cross-border risk."],
       ["Should I choose sea freight or air freight?", "Sea freight is usually better for larger or cost-sensitive cargo. Air freight is better for urgent, small-batch or time-sensitive shipments."],
       ["Can you handle oversized or project cargo?", "Yes. We first evaluate dimensions, weight, packaging and loading conditions, then match breakbulk, heavy-duty trucking and port resources."],
@@ -517,11 +534,11 @@ const content = {
     contact: {
       title: "Contact Shanghai Junhao",
       desc:
-        "Official email, phone, address and QR/contact channels will be added later. The current form shows the information structure needed for a useful quotation.",
+        "Submit cargo information and the operations team will match a suitable transport plan based on origin, destination, cargo type, weight, volume and required services.",
       channels: [
-        ["Company Email", "To be added", "mail"],
-        ["Phone / WeChat", "To be added", "phone"],
-        ["Office Area", "Shanghai / address to be added", "address"],
+        ["Contact Person", "E Jingbo", "person"],
+        ["Phone / WeChat", "13916407700", "phone"],
+        ["Office Area", "Shanghai", "address"],
       ],
     },
     form: {
@@ -952,8 +969,9 @@ function NetworkSection({ t }) {
             <strong />
             <span>{t.routeLegend[1]}</span>
           </div>
-          {t.mapDots.map((port, index) => (
-            <i key={port} style={{ "--index": index }} aria-hidden="true" />
+          <p className="network-caption">{t.networkCaption}</p>
+          {t.mapDots.map(([port, x, y]) => (
+            <i key={port} style={{ "--x": `${x}%`, "--y": `${y}%` }} aria-hidden="true" />
           ))}
         </div>
       </div>
@@ -1046,6 +1064,7 @@ function Contact({ t }) {
   const [sent, setSent] = useState(false);
   const contactIcons = {
     mail: Mail,
+    person: UserRound,
     phone: PhoneCall,
     address: MapPin,
   };
@@ -1059,14 +1078,17 @@ function Contact({ t }) {
         <div className="contact-cards">
           {t.contact.channels.map(([label, value, icon]) => {
             const ContactIcon = contactIcons[icon] || Mail;
+            const isPhone = icon === "phone" && /^\+?\d[\d\s-]*$/.test(value);
+            const CardTag = isPhone ? "a" : "div";
+            const cardProps = isPhone ? { href: `tel:${value.replace(/[^\d+]/g, "")}` } : {};
             return (
-              <div key={label}>
+              <CardTag key={label} {...cardProps}>
                 <ContactIcon size={19} />
                 <span>
                   <strong>{label}</strong>
                   <small>{value}</small>
                 </span>
-              </div>
+              </CardTag>
             );
           })}
         </div>
