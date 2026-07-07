@@ -1,0 +1,97 @@
+{
+  "updatedAt": "2026-07-07T17:10:00+08:00",
+  "shipments": [
+    {
+      "id": "JH20260707001",
+      "aliases": ["JH-LA-SHA-001", "MSCU1234567", "BLJH0707001"],
+      "container": "MSCU1234567",
+      "serviceZh": "洛杉矶 → 上海｜海运整柜",
+      "serviceEn": "Los Angeles → Shanghai | Ocean FCL",
+      "statusZh": "运输中",
+      "statusEn": "In Transit",
+      "currentZh": "太平洋航行中，目的港预计靠泊前 11 天",
+      "currentEn": "Sailing across the Pacific, 11 days before estimated berth",
+      "eta": "2026-07-18",
+      "lastUpdated": "2026-07-07 16:40 CST",
+      "progress": 0.58,
+      "vessel": "MATSON / JH Pioneer",
+      "route": [
+        { "nameZh": "洛杉矶仓库", "nameEn": "Los Angeles Warehouse", "x": 12, "y": 58 },
+        { "nameZh": "长滩港", "nameEn": "Long Beach Port", "x": 25, "y": 60 },
+        { "nameZh": "太平洋航行", "nameEn": "Pacific Transit", "x": 50, "y": 38 },
+        { "nameZh": "上海外港", "nameEn": "Shanghai Terminal", "x": 78, "y": 50 },
+        { "nameZh": "上海仓库", "nameEn": "Shanghai Warehouse", "x": 88, "y": 62 }
+      ],
+      "milestones": [
+        { "date": "2026-07-01 09:30", "labelZh": "订舱确认", "labelEn": "Booking confirmed", "state": "done" },
+        { "date": "2026-07-02 15:10", "labelZh": "海外仓提货", "labelEn": "Cargo picked up from overseas warehouse", "state": "done" },
+        { "date": "2026-07-03 18:20", "labelZh": "长滩港进港", "labelEn": "Gated in at Long Beach terminal", "state": "done" },
+        { "date": "2026-07-04 22:45", "labelZh": "船舶离港", "labelEn": "Vessel departed", "state": "done" },
+        { "date": "2026-07-07 16:40", "labelZh": "海上运输中", "labelEn": "Ocean transit in progress", "state": "active" },
+        { "date": "预计 2026-07-18", "labelZh": "上海港靠泊与清关", "labelEn": "Shanghai arrival and clearance", "state": "pending" },
+        { "date": "待确认", "labelZh": "仓库交付签收", "labelEn": "Warehouse delivery and POD", "state": "pending" }
+      ]
+    },
+    {
+      "id": "JH20260707002",
+      "aliases": ["JH-AIR-PVG-002", "AIRJH0707002", "AWB87654321"],
+      "container": "AWB87654321",
+      "serviceZh": "纽约 → 上海｜空运急件",
+      "serviceEn": "New York → Shanghai | Priority Air",
+      "statusZh": "目的港处理中",
+      "statusEn": "Destination Handling",
+      "currentZh": "货物已抵达上海，正在安排清关与入仓",
+      "currentEn": "Cargo arrived in Shanghai and is entering clearance and warehouse handoff",
+      "eta": "2026-07-09",
+      "lastUpdated": "2026-07-07 15:25 CST",
+      "progress": 0.78,
+      "vessel": "Air service / PVG inbound",
+      "route": [
+        { "nameZh": "纽约仓库", "nameEn": "New York Warehouse", "x": 13, "y": 44 },
+        { "nameZh": "JFK机场", "nameEn": "JFK Airport", "x": 26, "y": 42 },
+        { "nameZh": "空运航段", "nameEn": "Air Transit", "x": 54, "y": 28 },
+        { "nameZh": "上海浦东机场", "nameEn": "Shanghai PVG", "x": 80, "y": 48 },
+        { "nameZh": "上海派送", "nameEn": "Shanghai Delivery", "x": 89, "y": 62 }
+      ],
+      "milestones": [
+        { "date": "2026-07-05 10:00", "labelZh": "急件订舱", "labelEn": "Priority booking confirmed", "state": "done" },
+        { "date": "2026-07-05 17:30", "labelZh": "纽约仓库交货", "labelEn": "Cargo handed over at New York warehouse", "state": "done" },
+        { "date": "2026-07-06 04:15", "labelZh": "航班起飞", "labelEn": "Flight departed", "state": "done" },
+        { "date": "2026-07-07 12:50", "labelZh": "抵达上海浦东", "labelEn": "Arrived at Shanghai PVG", "state": "done" },
+        { "date": "2026-07-07 15:25", "labelZh": "目的港清关处理中", "labelEn": "Destination clearance in progress", "state": "active" },
+        { "date": "预计 2026-07-09", "labelZh": "派送签收", "labelEn": "Final delivery", "state": "pending" }
+      ]
+    },
+    {
+      "id": "JH20260707003",
+      "aliases": ["JH-HOU-NGB-003", "OOLU7654321", "BLJH0707003"],
+      "container": "OOLU7654321",
+      "serviceZh": "休斯敦 → 宁波｜项目设备",
+      "serviceEn": "Houston → Ningbo | Project Equipment",
+      "statusZh": "报关资料审核",
+      "statusEn": "Document Review",
+      "currentZh": "目的港资料预审中，等待商检与木质包装信息确认",
+      "currentEn": "Destination documents under pre-review, inspection and wooden packing details pending",
+      "eta": "2026-07-24",
+      "lastUpdated": "2026-07-07 14:10 CST",
+      "progress": 0.42,
+      "vessel": "Hapag-Lloyd / Project lane",
+      "route": [
+        { "nameZh": "休斯敦工厂", "nameEn": "Houston Factory", "x": 11, "y": 56 },
+        { "nameZh": "休斯敦港", "nameEn": "Houston Port", "x": 26, "y": 58 },
+        { "nameZh": "海上运输", "nameEn": "Ocean Transit", "x": 50, "y": 34 },
+        { "nameZh": "宁波港", "nameEn": "Ningbo Port", "x": 78, "y": 54 },
+        { "nameZh": "项目现场", "nameEn": "Project Site", "x": 90, "y": 64 }
+      ],
+      "milestones": [
+        { "date": "2026-07-02 11:20", "labelZh": "项目货方案确认", "labelEn": "Project cargo plan confirmed", "state": "done" },
+        { "date": "2026-07-03 09:45", "labelZh": "工厂提货与加固", "labelEn": "Factory pickup and securing", "state": "done" },
+        { "date": "2026-07-04 20:10", "labelZh": "休斯敦港进港", "labelEn": "Gated in at Houston port", "state": "done" },
+        { "date": "2026-07-06 08:30", "labelZh": "出口报关放行", "labelEn": "Export customs released", "state": "done" },
+        { "date": "2026-07-07 14:10", "labelZh": "目的港资料预审", "labelEn": "Destination documents under review", "state": "active" },
+        { "date": "预计 2026-07-24", "labelZh": "宁波港靠泊", "labelEn": "Ningbo arrival", "state": "pending" },
+        { "date": "待确认", "labelZh": "大件陆运与现场交付", "labelEn": "Heavy-haul delivery to site", "state": "pending" }
+      ]
+    }
+  ]
+}
