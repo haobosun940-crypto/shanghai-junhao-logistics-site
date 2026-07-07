@@ -271,7 +271,7 @@ button {
 
 .hero-grid {
   position: relative;
-  z-index: 4;
+  z-index: 6;
   width: min(1280px, calc(100% - 40px));
   min-height: 760px;
   margin: 0 auto;
@@ -358,6 +358,8 @@ p {
 }
 
 .hero-actions {
+  position: relative;
+  z-index: 7;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
